@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import MenuBar from './components/MenuBar/MenuBar'
+import MenuBar from './components/MenuBar/MenuBar';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <MenuBar/>
+    <div>
+      <MenuBar/>
+      <Footer/>
+    </div>
   );
 }
 

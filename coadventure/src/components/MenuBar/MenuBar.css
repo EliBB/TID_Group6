@@ -1,0 +1,39 @@
+.menu-container{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #F2F2F2;
+    padding: 2%;
+    flex-wrap: wrap;
+}
+
+.menu-link{
+    width: 122px;
+    height: 40px;
+    
+    border: 3px solid #285850;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+
+.menu-link a {
+    color: #285850;
+    text-decoration: none;
+
+    margin-top: 9px;
+}
+
+#home-icon-link{
+    border: none;
+}
+
+#home-icon{
+    font-size: 35px;
+    color: #285850;
+}
