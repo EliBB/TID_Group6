@@ -4,6 +4,10 @@ import Home from './MenuBarItems/Home/Home';
 import Excursions from './MenuBarItems/Excursions/Excursions';
 import BookSeats from './MenuBarItems/BookSeats/BookSeats';
 import Feedback from './MenuBarItems/Feedback/Feedback';
+import Member from './MenuBarItems/Home/Member/Member';
+import Organizer from './MenuBarItems/Home/Organizer/Organizer';
+import MemberRegistration from './MenuBarItems/Home/Member/MemberRegistration';
+
 import './MenuBar.css';
 import { BiHomeAlt } from "react-icons/bi"
 
@@ -41,7 +45,10 @@ function MenuBar(){
                 <Route path="/excursions" render={Excursions}/>
                 <Route path="/bookSeats" render={BookSeats}/>
                 <Route path="/feedback" render={Feedback}/>
-                <Route path="/" render={Home}/>
+                <Route path="/organizer" render={Organizer}/>
+                <Route path="/member" render={Member}/>
+                <Route path="/memberRegistration" render={MemberRegistration}/>
+                <Route path="/" exact render={Home}/>
             </Switch>
         </BrowserRouter>
 
