@@ -1,12 +1,13 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, NavLink, Switch, BrowserRouter } from "react-router-dom";
+import { Route, NavLink, Switch, BrowserRouter } from "react-router-dom";
 import Home from './MenuBarItems/Home/Home';
 import Excursions from './MenuBarItems/Excursions/Excursions';
 import BookSeats from './MenuBarItems/BookSeats/BookSeats';
 import Feedback from './MenuBarItems/Feedback/Feedback';
 import Member from './MenuBarItems/Home/Member/Member';
 import Organizer from './MenuBarItems/Home/Organizer/Organizer';
-import MemberRegistration from './MenuBarItems/Home/Member/MemberRegistration';
+import MemberRegistration from './MenuBarItems/Home/Member/SignUp/MemberRegistration';
+import ExcursionInfo from './MenuBarItems/Home/Member/ExcursionInfo';
 
 import './MenuBar.css';
 import { BiHomeAlt } from "react-icons/bi"
@@ -46,7 +47,8 @@ function MenuBar(){
                 <Route path="/bookSeats" render={BookSeats}/>
                 <Route path="/feedback" render={Feedback}/>
                 <Route path="/organizer" render={Organizer}/>
-                <Route path="/member" render={Member}/>
+                <Route path="/member" exact render={Member}/>
+                <Route path="/member/:excursionId" render={ExcursionInfo}/>
                 <Route path="/memberRegistration" render={MemberRegistration}/>
                 <Route path="/" exact render={Home}/>
             </Switch>

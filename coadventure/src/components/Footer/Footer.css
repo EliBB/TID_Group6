@@ -4,8 +4,14 @@
     background-color: #F2F2F2;
     padding: 2%;
     flex-wrap: wrap;
-    position: relative;
+    position: fixed;
+    max-width: 100%;
     bottom: 0;
+
+    clear: both;
+    position: relative;
+    
+    margin-top:auto; 
 }
 
 .logo{
