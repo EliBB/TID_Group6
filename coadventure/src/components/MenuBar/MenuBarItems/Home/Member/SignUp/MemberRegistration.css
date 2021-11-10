@@ -1,0 +1,82 @@
+
+.signUp-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #2F796D;    
+
+    margin: 0 5% 5% 5%;
+}
+
+.form{
+    min-width: 60%;
+}
+.header{
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+.signUp-row{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.row-item{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.row-name{
+    display: flex;
+    font-size: 20px;
+    text-decoration: none;
+    
+}
+
+.row-name p{
+    margin-bottom: 0px;
+}
+
+.input-field{
+    border: solid 3px #82D9CA;
+    border-radius: 10px;
+    min-width: 98%;
+    min-height: 56px;
+    font-size: 20px;
+    font-weight: 700;
+    color:#285850;
+    outline: none;
+}
+
+.button-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    margin: 5%;
+}
+
+
+
+.button-row button{
+    background-color: #2F796D;
+    border: solid 3px #2F796D;
+    border-radius: 10px;
+    
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color:#C4F2EB;
+
+    padding: 2%;
+    max-width: 20%;
+    
+    
+    
+}
