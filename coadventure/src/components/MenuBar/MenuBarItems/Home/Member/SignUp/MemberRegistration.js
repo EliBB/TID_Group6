@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './MemberRegistration.css';
+import './SignUp.css';
+import { Link } from 'react-router-dom';
 
 function MemberRegistration(){
     return(
@@ -14,7 +15,7 @@ function MemberRegistration(){
                             <div className="row-name"> 
                                 <p>First name</p>
                             </div> 
-                            <div >
+                            <div>
                                 <label htmlFor="firstname"></label>
                                 <input type="text" required
                                 className="input-field"
@@ -91,20 +92,18 @@ function MemberRegistration(){
                     </div>
 
                     <div className="button-row">
-                        <button id="prev-button" type="submit" >
-                            Cancel
-                        </button>
+                        <Link to="/member" >
+                            <button id="prev-button" type="submit" >
+                                Cancel
+                            </button>
+                        </Link>
                     
-                    
-                        <button id="next-button" type="submit" >
-                            Next
-                        </button>
-                        
-                        
+                        <Link to="/addMembers" >
+                            <button id="next-button" type="submit" >
+                                Next
+                            </button>
+                        </Link>  
                     </div>
-                
-                
-
             </form>
         
         </div>

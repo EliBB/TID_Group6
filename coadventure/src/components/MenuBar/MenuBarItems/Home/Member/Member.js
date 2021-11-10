@@ -39,7 +39,7 @@ function Member(){
                 
  
                 <div className="member-frontpage-col2">
-                    <Link to={`member/${excursion.excursionId}`} activeStyle className="member-link">
+                    <Link to={`member/${excursion.excursionId}`}  className="member-link">
                         <button>
                             Get info
                         </button>

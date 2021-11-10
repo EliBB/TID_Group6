@@ -6,9 +6,6 @@ import './InfoOrganizer.css';
 function excursionInfo(){
     return(
         <div>
-            <div>
-                <h1>MenuBar</h1>
-            </div>
             <div className="excursion_info">
                 <h2>Excursion name</h2>
                 <h2>|</h2>

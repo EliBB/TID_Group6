@@ -55,7 +55,7 @@ function ExcursionInfo(){
                     </div>
 
                     <div className="info-row" id="info-row2">
-                        <Link to="/memberRegistration" activeStyle className="member-link">
+                        <Link to="/memberRegistration"  className="member-link">
                             <button>
                                 Sign up
                             </button>

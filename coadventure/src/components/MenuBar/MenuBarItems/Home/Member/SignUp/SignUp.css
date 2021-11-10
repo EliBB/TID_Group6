@@ -1,20 +1,17 @@
-
 .signUp-container{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     
-
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     color: #2F796D;    
 
-    margin: 0 5% 5% 5%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
-.form{
-    min-width: 60%;
-}
 .header{
     font-size: 24px;
     text-decoration: underline;
@@ -59,12 +56,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between; 
-    margin: 5%;
+    margin-top: 3%;
+    margin-bottom: 10%;
 }
 
-
-
-.button-row button{
+.button-row button {
     background-color: #2F796D;
     border: solid 3px #2F796D;
     border-radius: 10px;
@@ -75,8 +71,54 @@
     color:#C4F2EB;
 
     padding: 2%;
-    max-width: 20%;
+
+    cursor: pointer; 
     
+    height: 61px;
+    width: 102px;
+}
+
+.addMembers-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#col1{
+    flex: 1;
+}
+#col2{
+    flex: 6;
+    margin-right: 2%;
+}
+#col3{
+    border: solid 3px #82D9CA;
+    border-radius: 10px;
+    flex: 2;
+    margin-top: 50px;
+}
+
+.addMembersBtn{
+    display: flex;;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+#addMembersBtn{
+    display: flex;
+    align-items: center;
     
+    background-color: #2F796D;
+    border: solid 3px #2F796D;
+    border-radius: 10px;
     
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color:#C4F2EB;
+
+    padding: 2%;
+
+    cursor: pointer; 
+    height: 62px;
+    width: fit-content;
 }
