@@ -5,7 +5,7 @@ import Overview from '../smallComponents/OverviewExcursions';
 import ColoredLine from '../smallComponents/LineHeader';
 
 function Profile(){
-    const btnAction = "link"
+    const btnAction = "Delete Registration"
     const btnLink = "/bookSeats"
 
     const profileInfo = {
