@@ -1,8 +1,11 @@
 import React from "react";
 import "./OverviewExcursions.css";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import AlertDelete from "./AlertDelete";
 
 function OverviewExcursions(props){
+
+    const [buttonAlert, setButtonAlert] = useState(false);
 
     const excursions = [
         {excursionId: 1, type: 'Wilderness Trip', where: 'Sweden', date: '31. june - 5 july 2022'},
@@ -13,8 +16,8 @@ function OverviewExcursions(props){
 
     const handleClick = (event) => {
         if(event === "Delete Registration"){
-            alert("Are you sure you want to delete your registration?");
-            // Call delete excursion from database...
+            <alert>nono </alert>
+
         }
         else{
             return;
@@ -50,18 +53,20 @@ function OverviewExcursions(props){
                     </fieldset>
                     
                     <div className="button-column">
-                        <Link to={props.linkBtn} onClick={() => handleClick(props.actionBtn)}>
-                            <button className="green-btn"> 
-                                {props.actionBtn}
-                            </button> 
-                        </Link>
+                        <button className="green-btn" onClick={() => setButtonAlert(true)}> 
+                            {props.actionBtn}
+                        </button>
                     </div>
 
                 </div>
             ))}
+
+            <AlertDelete trigger={buttonAlert} setTrigger={setButtonAlert}></AlertDelete>
         </div>
     )
 
 }
 
 export default OverviewExcursions;
+
+//handleClick(props.actionBtn)
