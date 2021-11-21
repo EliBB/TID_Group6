@@ -1,0 +1,28 @@
+.alert{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-inner{
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+    background-color: white;
+    border: solid #2F796D;
+    border-radius: 10px;
+}
+
+.container-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

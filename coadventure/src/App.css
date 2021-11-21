@@ -69,3 +69,15 @@
   cursor: pointer;
   
 }
+
+.red-btn{
+  background-color: #F96C6C;
+  border: solid 3px #F96C6C;
+  border-radius: 10px;    
+  font-size: 20px;
+  font-weight: bold;
+  
+  color:#FFFFFF;
+  padding: 2%;
+  cursor: pointer;
+}
