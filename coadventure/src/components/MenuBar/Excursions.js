@@ -1,8 +1,12 @@
 import React from 'react';
+import SignUpForm from '../SignUp/SignUpForm';
 
 function Excursions(){
     return(
-    <h1>Hello Excursions</h1>
+        <div className="container">
+            <SignUpForm/>
+        </div>
+    
     )
 }
 

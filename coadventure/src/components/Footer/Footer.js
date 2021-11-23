@@ -4,10 +4,9 @@ import Logo from '../../images/Logo_CoAdventure.png';
 
 function Footer(){
     return(
-        <div className="footer-container">
+        <footer className="footer-container">
             <img src={Logo} className="logo" alt="Logo"/>
-            <p>This is our footer</p>
-        </div>
+        </footer>
     )
 }
 

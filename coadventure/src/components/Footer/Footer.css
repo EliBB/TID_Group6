@@ -1,16 +1,13 @@
 .footer-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: left;
     background-color: #F2F2F2;
     padding: 2%;
     flex-wrap: wrap;
-    position: fixed;
     max-width: 100%;
     bottom: 0;
-
     clear: both;
     position: relative;
-    
     margin-top:auto; 
 }
 

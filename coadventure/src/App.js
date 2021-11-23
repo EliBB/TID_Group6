@@ -6,30 +6,25 @@ import Footer from './components/Footer/Footer';
 
 import Home from './components/MenuBar/Home';
 import Excursions from './components/MenuBar/Excursions';
+import ExcursionOverview from './components/Excursions/ExcursionOverview';
 import BookSeats from './components/MenuBar/BookSeats';
 import Feedback from './components/MenuBar/Feedback';
 import Profile from './components/MenuBar/Profile';
-import Member from './components/Member/Member';
-import MemberRegistration from './components/Member/SignUp/MemberRegistration';
-import ExcursionInfo from './components/Member/ExcursionInfo';
-import SignUp from './components/SignUp/SignUp';
+
 
 function App() {
   return (
     <BrowserRouter>
       <div>
         <MenuBar/>
+        
 
         <Switch>
-          <Route path="/excursions" render={Excursions}/>
+          <Route path="/excursions" exact render={Excursions}/>
+          <Route path="excursionsOverview" render={ExcursionOverview}/>
           <Route path="/bookSeats" render={BookSeats}/>
           <Route path="/feedback" render={Feedback}/>
           <Route path="/profile" render={Profile}/>
-          <Route path="/signUp" render={SignUp}/>
-          
-          <Route path="/member" exact render={Member}/>
-          <Route path="/member/:excursionId" render={ExcursionInfo}/>
-          <Route path="/memberRegistration" render={MemberRegistration}/>
           <Route path="/" exact render={Home}/>
         </Switch>  
 

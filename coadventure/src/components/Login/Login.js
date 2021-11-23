@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import './Login.css';
-import { Link } from 'react-router-dom';
-import SignUp from "../SignUp/SignUp";
+
 
 function Login(){
     const [email, setEmail] = useState("");
@@ -26,12 +25,12 @@ function Login(){
     <form onSubmit={handleSubmit} className="login-container" >
         
             <div className="login-row" id="header-row">
-                <p className="header1" >Login</p>
+                <h1>Login</h1>
             </div>
 
             <div className="login-row">
                 <label>
-                    <p className="header2">E-mail</p>
+                    <h2>E-mail</h2>
                     <input 
                     className="input-field"
                     type="email"
@@ -43,7 +42,7 @@ function Login(){
 
             <div className="login-row">
                 <label>
-                    <p className="header2">Password</p>
+                    <h2>Password</h2>
                     <input 
                     className="input-field"
                     type="password"
@@ -53,15 +52,8 @@ function Login(){
             </div>
         
 
-            <div className="login-row" id="button-row">
-                <Link to="/signUp">
-                    <button type="button" className="white-btn"> 
-                        Sign up
-                    </button>
-                </Link>
-                 
-
-                <button type="submit" className="green-btn">
+            <div className="login-row" id="button-row">          
+                <button type="submit" className="green-button" onClick={handleSubmit}>
                     Login
                 </button> 
             </div>
