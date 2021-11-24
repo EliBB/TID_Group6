@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import Parse from "parse"
+
+//Parse.initialize(process.env.REACT_APP_APP_KEY, process.env.REACT_APP_JS_KEY);
+Parse.initialize("aKa4elDQmoDX7QTNARrGF3MR3JmM5h7uo5jy5uK6", "ZF9JDY4h3W9r2YIgeVh2Pjhp1EAuzXJWPG8I98fv")
+Parse.serverURL = 'https://parseapi.back4app.com/';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

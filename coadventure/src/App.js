@@ -14,10 +14,6 @@ import MemberRegistration from './components/Member/SignUp/MemberRegistration';
 import ExcursionInfo from './components/Member/ExcursionInfo';
 import SignUp from './components/SignUp/SignUp';
 
-import Parse from 'parse'
-
-Parse.initialize(process.env.REACT_APP_APP_KEY, process.env.REACT_APP_JS_KEY);
-Parse.serverURL = 'https://parseapi.back4app.com/';
 
 function App() {
   return (
