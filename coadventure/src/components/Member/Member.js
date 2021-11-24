@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import OverviewExcursions from '../smallComponents/OverviewExcursions';
 import ColoredLine from '../smallComponents/LineHeader';
 import BtnLink from '../smallComponents/BtnLink';

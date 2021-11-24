@@ -1,14 +1,12 @@
 import React from 'react';
 import "./Excursion.css";
-import Member from '../Member/Member';
-import Organizer from '../Organizer/Organizer';
-import ExcursionInfo from '../Member/ExcursionInfo';
+import Member from "../Member/Member"
 
 function Excursions(){
 
     return(
         <div>
-            <ExcursionInfo/>
+            <Member/>
         </div>
     )
 }

@@ -95,7 +95,7 @@ function Profile(){
                                 </div>
 
                                 <div className="button-info">
-                                    <BtnDelete className="button-info" actionBtn="Delte Registration" ></BtnDelete>
+                                    <BtnDelete className="button-info" actionBtn="Delete Registration" ></BtnDelete>
                                 </div>
                             
                             </div>

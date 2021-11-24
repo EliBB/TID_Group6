@@ -20,7 +20,7 @@
 
 .excursionInfo-row{
     display: flex;
-    margin: 5%;
+    margin-top: 5%;
     flex-wrap: wrap;
 }
 
