@@ -1,12 +1,11 @@
 import React from "react";
 import "./Profile.css";
 import profilePic from '../../images/profile_picture.png';
-import Overview from '../smallComponents/OverviewExcursions';
+import OverviewExcursions from '../smallComponents/OverviewExcursions';
 import ColoredLine from '../smallComponents/LineHeader';
+import BtnDelete from "../smallComponents/BtnDelete";
 
 function Profile(){
-    const btnAction = "Delete Registration"
-    const btnLink = "/bookSeats"
 
     const profileInfo = {
         name: "Oscar Petersen", 
@@ -15,6 +14,12 @@ function Profile(){
         address: "Rued Langgaards vej 7, 2300 København S",
         number: 24254546,
     };
+
+    const excursions = [
+        {excursionId: 1, type: 'Wilderness Trip', where: 'Sweden', date: '31. june - 5 july 2022'},
+        {excursionId: 2, type: 'Cottage Trip', where: 'Norway', date: '4-7 january 2022'},
+        {excursionId: 3, type: 'Glamping', where: 'Denmark', date: '10-12 september 2022'},
+    ]
 
     return(
         <div className="main-container">
@@ -75,7 +80,29 @@ function Profile(){
                 <div className ="profile-row-item">
                     <p>Registered excursions:</p>
                 </div>
-                <Overview actionBtn={btnAction} linkBtn={btnLink}/>
+
+                <div className="users-excursions">
+
+                    <div className="excursion-overview">
+                        {excursions.map(excursion => (
+                            <div className="excursion" key={excursion.excursionId}>
+                                
+                                <div className="info-bar">
+                                    <OverviewExcursions type={excursion.type}
+                                    where={excursion.where}
+                                    date={excursion.date}
+                                    actionBtn="Get Info"></OverviewExcursions>
+                                </div>
+
+                                <div className="button-info">
+                                    <BtnDelete className="button-info" actionBtn="Delte Registration" ></BtnDelete>
+                                </div>
+                            
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
                 
             </div>
         </div>

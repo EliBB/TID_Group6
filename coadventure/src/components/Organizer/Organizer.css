@@ -1,14 +1,14 @@
-.member-container{
+.organizer-container{
     display: flex;
 }
 
-.header-member{
+.header-organizer{
     margin-left: 20px;
     height: 70px;
     border: solid white;
 }
 
-.member-excursions{
+.excursions-organizer{
     display: flex;
     flex-direction: column;
 
@@ -16,6 +16,10 @@
     margin-top: 120px;
     width: 1000px;
 
+}
+
+.button-create{
+    align-self: center;
 }
 
 .all-excursions{

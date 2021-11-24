@@ -1,8 +1,15 @@
 import React from 'react';
+import "./Excursion.css";
+import Member from '../Member/Member';
+import Organizer from '../Organizer/Organizer';
+import ExcursionInfo from '../Member/ExcursionInfo';
 
 function Excursions(){
+
     return(
-    <h1>Hello Excursions</h1>
+        <div>
+            <ExcursionInfo/>
+        </div>
     )
 }
 

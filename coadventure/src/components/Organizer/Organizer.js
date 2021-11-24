@@ -1,25 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import OverviewExcursions from '../smallComponents/OverviewExcursions';
 import ColoredLine from '../smallComponents/LineHeader';
+import "./Organizer.css";
 import BtnLink from '../smallComponents/BtnLink';
-import './Member.css';
 
+function Organizer(){
 
-function Member(){
+    const btnLink="";
 
     const excursions = [
         {excursionId: 1, type: 'Wilderness Trip', where: 'Sweden', date: '31. june - 5 july 2022'},
         {excursionId: 2, type: 'Cottage Trip', where: 'Norway', date: '4-7 january 2022'},
         {excursionId: 3, type: 'Glamping', where: 'Denmark', date: '10-12 september 2022'},
-    
     ]
 
-    const btnLink='';
-
     return(
-        <div className="member-container">
-            <div className="member-header">
-                <div className="header-member">
+        <div className="organizer-container">
+            <div className="organizer-header">
+                <div className="header-organizer">
                     <p className="header1">Excursions</p>
                 </div>
                 
@@ -29,7 +27,12 @@ function Member(){
                 </div>
             </div>
 
-            <div className="member-excursions">
+            <div className="excursions-organizer">
+                <div className="button-create">
+                    <button className="green-btn">
+                        Create Excursion
+                    </button>
+                </div>
 
                 <div className="all-excursions">
                     {excursions.map(excursion => (
@@ -56,4 +59,4 @@ function Member(){
     )
 }
 
-export default Member;
+export default Organizer;
