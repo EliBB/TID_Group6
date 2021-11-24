@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import './Login.css';
 
+import { Link } from 'react-router-dom';
+import Parse from 'parse';
+import SignUp from "../SignUp/SignUp";
 
 function Login(){
     const [email, setEmail] = useState("");
@@ -8,6 +11,13 @@ function Login(){
 
     function handleSubmit(event){
         event.preventDefault();
+
+        const user = new Parse.User();
+        user.setPassword(password);
+        user.setUsername(email);
+        user.logIn().then((loggedInUser) => {
+          console.log(loggedInUser);
+        });
     }
 
     function handleEmail(event){
@@ -22,7 +32,7 @@ function Login(){
 
     return(
     <div className="container">
-    <form onSubmit={handleSubmit} className="login-container" >
+    <form className="login-container" >
         
             <div className="login-row" id="header-row">
                 <h1>Login</h1>
@@ -52,10 +62,21 @@ function Login(){
             </div>
         
 
-            <div className="login-row" id="button-row">          
-                <button type="submit" className="green-button" onClick={handleSubmit}>
-                    Login
-                </button> 
+            <div className="login-row" id="button-row">                    
+                <div className="login-row" id="button-row">
+                <Link to="/signUp">
+                    <button type="button" className="white-btn"> 
+                        Sign up
+                    </button>
+                </Link>
+                 
+
+                <Link to="/Profile">
+                    <button onClick={handleSubmit} type="submit" className="green-button">
+                        Login
+                    </button> 
+                </Link>
+                </div>
             </div>
 
         
