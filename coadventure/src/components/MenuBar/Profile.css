@@ -1,7 +1,11 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+
 .profile-main-container{
     display: flex;
-    justify-content: flex-start;
-
+    margin-bottom: 50px;
 }
 
 .container-header{
@@ -24,7 +28,7 @@
     justify-content: space-around;
 
     margin-top: 100px;
-    margin-left: 120px;
+    margin-left: 180px;
     width: 650px;
 
 }
@@ -56,6 +60,27 @@
 .excursion-container{
     display: flex;
     flex-direction: column;
-    margin-left: 150px;
-    margin-top: 80px;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+.users-excursions{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.excursion{
+    display: flex;
+    align-items: center;
+
+}
+
+.info-bar{
+    width: 800px;
+    
+}
+
+.button-info{
+    margin-bottom: 10px;
 }

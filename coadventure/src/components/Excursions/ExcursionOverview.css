@@ -1,0 +1,41 @@
+.member-container{
+    display: flex;
+
+}
+
+.header-member{
+    height: 70px;
+
+}
+
+.member-excursions{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 20px;
+    margin-top: 180px;
+    width: 900px;
+
+}
+
+.all-excursions{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.one-excursion{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.info-excursion{
+    width: 800px;
+    
+}
+
+.button-getInfo{
+    margin-bottom: 10px;
+}

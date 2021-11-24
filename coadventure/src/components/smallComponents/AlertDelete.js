@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import './AlertDelete.css'
 
 function AlertDelete(props){
@@ -7,10 +6,10 @@ function AlertDelete(props){
     return(props.trigger) ? (
         <div className="alert">
             <div className='alert-inner'>
-                <p className="header1">Are you sure you want to delete?</p>
+                <h1>Are you sure you want to delete?</h1>
 
                 <div className="container-btns">
-                    <button className="green-btn" onClick={() => props.setTrigger(false)}>
+                    <button className="green-button" onClick={() => props.setTrigger(false)}>
                         Cancel
                     </button>
 
