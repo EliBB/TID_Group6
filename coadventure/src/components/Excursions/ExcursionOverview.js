@@ -1,4 +1,7 @@
 import React from "react";
+import ColoredLine from "../smallComponents/LineHeader"
+import OverviewExcursions from "../smallComponents/OverviewExcursions";
+import './ExcursionOverview.css'
 
 const ExcursionOverview = ({goNextStep}) => {
 
@@ -9,36 +12,44 @@ const ExcursionOverview = ({goNextStep}) => {
     ]
     
     return(
-        <div className="data">            
-            {excursions.map(excursion => (
-                <div className="info-row">
-                    <div className="row">
-                        <div className="row-item" key={excursion.excursionId}>  
-                            <div className="col-item">
-                                <p>Type</p>
-                                <h3>{excursion.type}  </h3>
-                            </div>
-
-                            <div className="col-item">
-                                <p>Where</p>
-                                <h3>{excursion.where} </h3>
-                            </div>
-
-                            <div className="col-item">
-                                <p>Date</p>
-                                <h3>{excursion.date}</h3>
-                            </div>
-                        </div>
-                    </div>
-                        
-                    <div>
-                        <button className="green-button" onClick={goNextStep}>
-                            Get info
-                        </button>
-                    </div>
+        <div className="member-container">
+            <div className="member-header">
+                <div className="header-member">
+                    <h1 className="header1">Excursions</h1>
                 </div>
-            ))}
-        </div>           
+                
+
+                <div className="horizontal-line">
+                    <ColoredLine></ColoredLine>
+                </div>
+            </div>
+
+            <div className="member-excursions">
+
+                <div className="all-excursions">
+                    {excursions.map(excursion => (
+                        <div className="one-excursion" key={excursion.excursionId}>
+
+                            <div className="info-excursion">
+                                <OverviewExcursions type={excursion.type}
+                                where={excursion.where}
+                                date={excursion.date}
+                                actionBtn="Get Info"></OverviewExcursions>
+                            </div>
+
+                            <div className="button-getInfo">
+                                <button className="green-button" onClick={goNextStep}>
+                                    Get info
+                                </button>
+                            </div>
+                        
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+            
+        </div>
     )
 }
 

@@ -11,6 +11,7 @@
     margin-right: 30px;
     margin-bottom: 30px;
     height: 80px;
+    width: 700px;
     
     border: solid #82D9CA;
     border-radius: 10px;
@@ -22,7 +23,8 @@
     justify-content: center;
     flex: 1.5;
     color:#82D9CA;
-    
+    font-size: 34px;
+    font-weight: bold;
 }
 
 .info{
@@ -31,13 +33,6 @@
     flex: 1;
     margin-right: 10px;
     margin-left: 10px;
-}
-
-.button-column{
-    flex: 0.5;
-    align-self: center;
-    margin-right: 80px;
-    margin-bottom: 20px;
 }
 
 fieldset{

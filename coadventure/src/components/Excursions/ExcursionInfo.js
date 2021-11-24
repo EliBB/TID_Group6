@@ -56,22 +56,28 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
                                 <h3>Children: {excursion.children}</h3>
                             </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <h1>Shopping List</h1>
                     </div>
-                </div>
-                        
-                <div className="button-row">    
-                    <button className="green-button" onClick={goBackStep}>
-                        Cancel
-                    </button>
 
                     <button className="green-button" type="submit" onClick={goNextStep}>
                         Sign up 
                     </button>
+
                 </div>
+                        
+                <div className="button-row">  
+                    <div>
+                        <h1>Shopping List</h1>
+                    </div>
+                    <div>
+                        <h1>Duty List</h1>
+                    </div>
+
+                </div>
+
+                <button className="green-button" onClick={goBackStep}>
+                    Back
+                </button>
             </div> 
             ))}
            

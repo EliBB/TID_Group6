@@ -3,7 +3,7 @@ import './Login.css';
 
 import { Link } from 'react-router-dom';
 import Parse from 'parse';
-import SignUp from "../SignUp/SignUp";
+//import SignUp from "../SignUp/SignUp";
 
 function Login(){
     const [email, setEmail] = useState("");
