@@ -1,0 +1,90 @@
+.excursion_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #2F706D;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
+    border-radius: 10px;
+    color: #F2F2F2;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.nr_members{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 3px solid #2F706D;
+    border-radius: 10px;
+    margin-top: 10px;
+    
+}
+
+.headline_members{
+    margin-top: -10px;
+    margin-bottom: -30px;
+    margin-left: 15px;
+    color: #2F706D;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.nr_people{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: -10px;
+    color: #2F706D;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.ShoppingList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ShoppingList h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    color: #2F706D;    
+}
+
+.DutyList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.DutyList h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    color: #2F706D;
+}
+
+.s_edit_bnt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2F706D;
+    margin-left: 15px;
+    width: 66px;
+    height: 26px;
+
+    border-radius: 10%;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #F2F2F2;
+}
