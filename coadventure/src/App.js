@@ -12,10 +12,6 @@ import Feedback from './components/MenuBar/Feedback';
 import Profile from './components/MenuBar/Profile';
 
 
-import Parse from 'parse'
-
-Parse.initialize(process.env.REACT_APP_APP_KEY, process.env.REACT_APP_JS_KEY);
-Parse.serverURL = 'https://parseapi.back4app.com/';
 
 function App() {
   return (
