@@ -65,7 +65,7 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
 
                 </div>
                         
-                <div className="button-row">  
+                <div className="lists">  
                     <div>
                         <h1>Shopping List</h1>
                     </div>
@@ -78,6 +78,7 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
                 <button className="green-button" onClick={goBackStep}>
                     Back
                 </button>
+
             </div> 
             ))}
            

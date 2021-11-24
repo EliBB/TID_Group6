@@ -28,7 +28,7 @@
     justify-content: space-around;
 
     margin-top: 100px;
-    margin-left: 120px;
+    margin-left: 180px;
     width: 650px;
 
 }
@@ -60,7 +60,7 @@
 .excursion-container{
     display: flex;
     flex-direction: column;
-    margin-left: 180px;
+    margin-left: 200px;
     margin-top: 20px;
 }
 
