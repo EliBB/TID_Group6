@@ -18,10 +18,7 @@ const ExcursionOverview = ({goNextStep}) => {
                     <h1 className="header1">Excursions</h1>
                 </div>
                 
-
-                <div className="horizontal-line">
-                    <ColoredLine></ColoredLine>
-                </div>
+                <ColoredLine></ColoredLine>
             </div>
 
             <div className="member-excursions">

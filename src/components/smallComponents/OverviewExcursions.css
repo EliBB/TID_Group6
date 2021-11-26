@@ -1,5 +1,18 @@
 .overview-container{
     display: flex;
+    flex-direction: column;
+}
+
+.border-header{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 1;
+
+}
+
+.header{
+    background-color: white;
 }
 
 .info-excursion-container{
@@ -7,11 +20,9 @@
     justify-content: space-around;
     align-items: center;
     flex: 4;
-
-    margin-right: 30px;
-    margin-bottom: 30px;
-    height: 80px;
-    width: 700px;
+    margin-top: -1.6em;
+    position: relative;
+    z-index: -1;
     
     border: solid #82D9CA;
     border-radius: 10px;
@@ -35,6 +46,7 @@
     margin-left: 10px;
 }
 
+/*
 fieldset{
     position: relative;
 }
@@ -62,3 +74,4 @@ fieldset::after{
     background: #fff;
     padding: 0 5px;
 }
+*/

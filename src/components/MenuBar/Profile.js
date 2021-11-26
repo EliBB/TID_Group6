@@ -30,9 +30,7 @@ function Profile(){
                         <h1>Profile</h1>
                         
                     </div>
-                    <div className="horizontal-line">
-                        <ColoredLine></ColoredLine>
-                    </div>
+                    <ColoredLine></ColoredLine>
                 </div>
                 
 
