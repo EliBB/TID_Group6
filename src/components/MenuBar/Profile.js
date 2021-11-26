@@ -4,15 +4,19 @@ import profilePic from '../../images/profile_picture.png';
 import OverviewExcursions from '../smallComponents/OverviewExcursions';
 import ColoredLine from '../smallComponents/LineHeader';
 import BtnDelete from "../smallComponents/BtnDelete";
+import Parse from 'parse'
 
 function Profile(){
 
+    const user = Parse.User.current();
+
     const profileInfo = {
-        name: "Oscar Petersen", 
-        email: "Oscar_Petersen@gmail.com", 
-        age: 45,
-        address: "Rued Langgaards vej 7, 2300 København S",
-        number: 24254546,
+        firstname: user.get("First_Name"),
+        lastname: user.get("Last_name"),
+        email: user.get("email"), 
+        age: user.get("Age"),
+        address: user.get("Address"),
+        number: user.get("Phone_num"),
     };
 
     const excursions = [
@@ -39,7 +43,7 @@ function Profile(){
                 <div className="profile-info-container">
                     <div className="profile-col1">
                         <div className ="header-profile">
-                            <h2>{profileInfo.name}</h2>
+                            <h2>{profileInfo.firstname} {profileInfo.lastname}</h2>
                         </div>
                         <div className="image-profile">
                             <img src={profilePic} className="profilePic" alt="ProfilePic"/>
