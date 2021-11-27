@@ -9,6 +9,7 @@ import Parse from 'parse'
 function Profile(){
 
     const user = Parse.User.current();
+    const result = [];
 
     const profileInfo = {
         firstname: user.get("First_Name"),
@@ -23,17 +24,15 @@ function Profile(){
         const getExcursions = Parse.Object.extend("ExcursionSignedUp");
         const query = new Parse.Query(getExcursions);
         query.equalTo("MemberID", user);
-        console.log(query);
+        //console.log(query);
 
         try {
             const results = await query.find();
-            const result = [];
-            console.log(`ParseObjects found: ${JSON.stringify(results)}`);
+            //console.log(`ParseObjects found: ${JSON.stringify(results)}`);
 
             for(let i = 0; i < results.length; i++){
                 const object = results[i].get("ExcursionID");
-                //console.log(object);
-                result.push(object);
+                result.push(object.id);
             }
 
             } catch (error) {
@@ -41,14 +40,60 @@ function Profile(){
             } 
     }
 
-    console.log(user.get("First_Name"));
+    //console.log(user.get("First_Name"));
     retrieveExcursion();
 
+    console.log(result);
+
     const excursions = [
-        {excursionId: 1, type: 'Wilderness Trip', where: 'Sweden', date: '31. june - 5 july 2022'},
-        {excursionId: 2, type: 'Cottage Trip', where: 'Norway', date: '4-7 january 2022'},
-        {excursionId: 3, type: 'Glamping', where: 'Denmark', date: '10-12 september 2022'},
+        // {excursionId: 1, type: 'Wilderness Trip', where: 'Sweden', date: '31. june - 5 july 2022'},
+        // {excursionId: 2, type: 'Cottage Trip', where: 'Norway', date: '4-7 january 2022'},
+        // {excursionId: 3, type: 'Glamping', where: 'Denmark', date: '10-12 september 2022'},
     ]
+
+    async function addExcursions(){
+        const excur = Parse.Object.extend("Excursion");
+        const q = new Parse.Query(excur);
+                
+        try{
+            for(let x=0; x < result.length; x++){
+                q.equalTo("objectId", result[x]);
+            }
+            const result2 = await q.find();
+            console.log(`ParseObjects found: ${JSON.stringify(result2)}`);
+
+            for(let j = 0; j < result2.length; j++){
+                const excursionId = j+1;
+
+                const type = result2[j].get("name");
+                console.log(type);
+
+                const where = result2[j].get("country");
+                console.log(where);
+
+                const date = [result2[j].get("from_date"), result2[j].get("to_date")];
+                console.log(date);
+
+                const ex = {};
+                ex["excursionId"] = excursionId;
+                ex["type"] = type;
+                ex["where"] = where;
+                ex[date] = date;
+                excursions.push(ex);
+            }
+
+            console.log(excursions);
+            
+
+        } catch(e) {
+            console.log("Error!" + e);
+        }
+    }
+
+    retrieveExcursion();
+    addExcursions();
+
+    console.log(excursions);
 
     return(
         <div className="main-container">
