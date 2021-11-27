@@ -19,6 +19,31 @@ function Profile(){
         number: user.get("Phone_num"),
     };
 
+    async function retrieveExcursion(){
+        const getExcursions = Parse.Object.extend("ExcursionSignedUp");
+        const query = new Parse.Query(getExcursions);
+        query.equalTo("MemberID", user);
+        console.log(query);
+
+        try {
+            const results = await query.find();
+            const result = [];
+            console.log(`ParseObjects found: ${JSON.stringify(results)}`);
+
+            for(let i = 0; i < results.length; i++){
+                const object = results[i].get("ExcursionID");
+                //console.log(object);
+                result.push(object);
+            }
+
+            } catch (error) {
+                console.log(`Error: ${JSON.stringify(error)}`);
+            } 
+    }
+
+    console.log(user.get("First_Name"));
+    retrieveExcursion();
+
     const excursions = [
         {excursionId: 1, type: 'Wilderness Trip', where: 'Sweden', date: '31. june - 5 july 2022'},
         {excursionId: 2, type: 'Cottage Trip', where: 'Norway', date: '4-7 january 2022'},
