@@ -1,30 +1,22 @@
 import React from 'react';
 import './NoCar.css';
+import BtnLink from '../../components/smallComponents/BtnLink';
 
 function NoCar(){
     return(
-        <div className = "carSignUp-container">
-            <header className="big-header">
-                <p>Sign Up</p>
-            </header>
+        <div className="no-car-container">
+            <h1>Sign Up</h1>
+
             <div className = "trans-container">
-                <div className="trans-p">
-                    <p>1 people needs car seats. </p>
-                    <p>You will recieve an e-mail after the deadline about booking car seats</p>
+                <div className="trans-paragraph">
+                    <h2 className="text-nocar">1 people needs car seats. </h2>
+                    <h2 className="text-nocar">You will recieve an e-mail after the deadline about booking car seats</h2>
                 </div>
 
                 <div className = "button-container">
-                    <div className="button-row">
-                        <div className="back-button">
-                            <p>Back</p>
-                        </div>
-                    </div>
+                    <BtnLink actionBtn="Back" link="/"></BtnLink>
 
-                    <div className="button-row">
-                        <div className="confirm-button">
-                            <p>Confirm</p>
-                        </div>
-                    </div>
+                    <BtnLink actionBtn="Confirm" link="/"></BtnLink>
                 </div>
             </div>
         </div>

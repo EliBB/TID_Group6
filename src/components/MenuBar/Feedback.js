@@ -1,10 +1,11 @@
 import React from 'react';
-import OverviewExcursions from '../smallComponents/OverviewExcursions';
 
 function Feedback(){
 
     return(
-    <OverviewExcursions></OverviewExcursions>
+        <div>
+            <h1>Feedback</h1>
+        </div>
     )
 }
 

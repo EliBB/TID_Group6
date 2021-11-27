@@ -1,31 +1,19 @@
 import React from 'react';
-
-import NoCar from './NoCar/NoCar';
 import './SignUpCar.css';
+import BtnLink from "../components/smallComponents/BtnLink"
 
-function SignupCar(){
+function SignUpCar(){
     return(
         <div className = "carSignUp-container">
-            <header className="big-header">
-                <p>Sign Up</p>
-            </header>
+            <h1>Sign Up</h1>
+
             <div className = "trans-container">
-                <header className="trans-header">
-                    <p>Transportation</p>
-                </header>
+                <h1 className="t-header">Transportation</h1>
 
                 <div className = "button-container">
-                    <div className="car-row">
-                        <div className="car-button">
-                            <p>No car to register</p>
-                        </div>
-                    </div>
+                    <BtnLink actionBtn="No car" link="/NoCar"></BtnLink>
 
-                    <div className="car-row">
-                        <div className="car-button">
-                            <p> Register car</p>
-                        </div>
-                    </div>
+                    <BtnLink actionBtn="Register car" link="/RegisterCar"></BtnLink>
                 </div>
             </div>
         </div>
@@ -33,4 +21,4 @@ function SignupCar(){
     );
 }
 
-export default SignupCar;
+export default SignUpCar;

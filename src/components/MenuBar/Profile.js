@@ -2,7 +2,7 @@ import React from "react";
 import "./Profile.css";
 import profilePic from '../../images/profile_picture.png';
 import OverviewExcursions from '../smallComponents/OverviewExcursions';
-import ColoredLine from '../smallComponents/LineHeader';
+import LineHeader from '../smallComponents/LineHeader';
 import BtnDelete from "../smallComponents/BtnDelete";
 
 function Profile(){
@@ -23,25 +23,17 @@ function Profile(){
 
     return(
         <div className="main-container">
+            <h1 className ="h1-profile">Profile</h1>
+
+            <LineHeader></LineHeader>
 
             <div className="profile-main-container">
-                <div className="container-header">
-                    <div className ="header-profile">
-                        <h1>Profile</h1>
-                        
-                    </div>
-                    <ColoredLine></ColoredLine>
-                </div>
                 
-
                 <div className="profile-info-container">
                     <div className="profile-col1">
-                        <div className ="header-profile">
-                            <h2>{profileInfo.name}</h2>
-                        </div>
-                        <div className="image-profile">
-                            <img src={profilePic} className="profilePic" alt="ProfilePic"/>
-                        </div>
+                        <h2 className ="header-profile">{profileInfo.name}</h2>
+
+                        <img src={profilePic} className="profilePic" alt="ProfilePic"/>
                     </div>
 
                     <div className="profile-col2">
@@ -74,35 +66,27 @@ function Profile(){
                 
             </div>
 
-            <div className="excursion-container">
-                <div className ="profile-row-item">
-                    <p>Registered excursions:</p>
-                </div>
+            <h2 className ="header-excursions">Registered excursions:</h2>
 
-                <div className="users-excursions">
+            <div className="users-excursions">
 
-                    <div className="excursion-overview">
-                        {excursions.map(excursion => (
-                            <div className="excursion" key={excursion.excursionId}>
-                                
-                                <div className="info-bar">
-                                    <OverviewExcursions type={excursion.type}
-                                    where={excursion.where}
-                                    date={excursion.date}
-                                    actionBtn="Get Info"></OverviewExcursions>
-                                </div>
-
-                                <div className="button-info">
-                                    <BtnDelete className="button-info" actionBtn="Delete Registration" ></BtnDelete>
-                                </div>
-                            
+                <div className="excursion-overview">
+                    {excursions.map(excursion => (
+                        <div className="excursion" key={excursion.excursionId}>    
+                            <OverviewExcursions className="info-bar"
+                            type={excursion.type}
+                            where={excursion.where}
+                            date={excursion.date}
+                            actionBtn="Get Info"></OverviewExcursions>
+                            <div className="button-info">
+                                <BtnDelete actionBtn="Delete Registration" ></BtnDelete>
                             </div>
-                        ))}
-                    </div>
-
+                        </div>
+                    ))}
                 </div>
-                
+
             </div>
+                
         </div>
     
     )   
