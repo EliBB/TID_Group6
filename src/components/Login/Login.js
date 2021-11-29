@@ -1,40 +1,39 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router';
+import Parse from 'parse';
 import './Login.css';
 
-import { Link } from 'react-router-dom';
-import Parse from 'parse';
-//import SignUp from "../SignUp/SignUp";
-
 function Login(){
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
+    const navigate = useNavigate();
 
     function handleSubmit(event){
         event.preventDefault();
+        console.log("login clicked")
 
         const user = new Parse.User();
         user.setPassword(password);
         user.setUsername(email);
-        user.logIn().then((loggedInUser) => {
-          console.log(loggedInUser);
+
+        user.logIn().then(() => {
+          navigate("/profile")
         });
     }
 
     function handleEmail(event){
-        event.preventDefault();
         setEmail(event.target.value);
     }
 
     function handlePassword(event){
-        event.preventDefault();
         setPassword(event.target.value);
     }
 
     return(
     <div className="container">
-    <form className="login-container" >
-        
-            <div className="login-row" id="header-row">
+        <form className="login-container">
+            <div className="header">
                 <h1>Login</h1>
             </div>
 
@@ -45,7 +44,7 @@ function Login(){
                     className="input-field"
                     type="email"
                     value={email}
-                    onChange={handleEmail}
+                    onChange={handleEmail} 
                     />
                 </label>
             </div>
@@ -53,34 +52,21 @@ function Login(){
             <div className="login-row">
                 <label>
                     <h2>Password</h2>
-                    <input 
-                    className="input-field"
+                    <input className="input-field"
                     type="password"
                     value={password}
-                    onChange={handlePassword} />
+                    onChange={handlePassword} 
+                    />
                 </label>
             </div>
         
 
-            <div className="login-row" id="button-row">                    
-                <div className="login-row" id="button-row">
-                <Link to="/signUp">
-                    <button type="button" className="white-btn"> 
-                        Sign up
-                    </button>
-                </Link>
-                 
-
-                <Link to="/Profile">
-                    <button onClick={handleSubmit} type="submit" className="green-button">
-                        Login
-                    </button> 
-                </Link>
-                </div>
+            <div className="button">                    
+                <button onClick={handleSubmit} type="submit" className="green-button">
+                    <p>Login</p>
+                </button>
             </div>
-
-        
-    </form>
+        </form>
     </div>
     )
 }
