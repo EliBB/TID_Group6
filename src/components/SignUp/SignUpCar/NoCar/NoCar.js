@@ -1,6 +1,6 @@
 import React from 'react';
 import './NoCar.css';
-import BtnLink from '../../components/smallComponents/BtnLink';
+import BtnLink from '../../../smallComponents/BtnLink';
 
 function NoCar(){
     return(

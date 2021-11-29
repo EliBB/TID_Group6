@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignUpCar.css';
-import BtnLink from "../components/smallComponents/BtnLink"
+import BtnLink from "../../smallComponents/BtnLink"
 
 function SignUpCar(){
     return(
