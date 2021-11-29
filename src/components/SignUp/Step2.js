@@ -1,55 +1,61 @@
 import React from "react";
 import './SignUp.css';
 
-const Step2 = ({goNextStep, goBackStep, handleData, input}) => {
+const Step2 = ({goNextStep, goBackStep, handleData, familyInput}) => {
     
     const handleSubmit = (event) => {
         event.preventDefault();
     }
 
   /*   function addNewFamilyMember(){
-        setFamilyMember([...familyMember, {firstname:"", age:""}])
+        setFamilyMember([...familyMember, {familyFirstname:"", familyAge:""}])
     }
  */
 
     return(
         <div className="placeholder">
-            <h1>Add Members</h1>
+            <div className="header-row">
+                <h1>Add Members</h1>
+            </div>
+            
 
             <form className="signUp-form" onSubmit={handleSubmit}>
                 <div className="info-container">
-                    <div className="info-row"> 
+                    <div className="col-row"> 
                         <div className="signUp-row">
+                            <h2>First name</h2>
                             <label>
-                                <h2>First name</h2>
                                 <input className="input-field"
                                 type="text" 
-                                name="firstname"
-                                value={input.firstname}
-                                onChange={handleData("firstname")} 
+                                name="familyFirstname"
+                                value={familyInput.familyFirstname}
+                                onChange={handleData("familyFirstname")} 
                                 />
                             </label>
                         </div>
 
                         <div className="signUp-row">
+                            <h2>Age</h2>
                             <label>
-                                <h2>Age</h2>
                                 <input className="input-field"
                                 type="number" 
-                                name="age"
-                                value={input.age}
-                                onChange={handleData("age")}
+                                name="familyAge"
+                                value={familyInput.familyAge}
+                                onChange={handleData("familyAge")}
                                 />
                             </label>
                         </div>
                     </div>
 
-                    <div className="dutyPriorities">
+                    <div className="info-col">
                         <h2>Duty Priorities</h2>
+                        
                     </div>
                 </div>
 
+                <br/>
                 <hr className="horizontal-line"></hr>
+                <br/>
 
                 <div className="add-button">
                     <button className="green-button" /* onClick={addNewFamilyMember} */>
@@ -60,7 +66,7 @@ const Step2 = ({goNextStep, goBackStep, handleData, input}) => {
 
                 <div className="button-row">
                     <button className="green-button" onClick={goBackStep}>
-                        Cancel
+                       Cancel
                     </button>
                 
                     <button className="green-button" type="submit" onClick={goNextStep}>

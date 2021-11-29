@@ -43,6 +43,19 @@ h2{
   outline: none;
 }
 
+
+.header-row{
+  display: flex;
+  justify-content: left;
+}
+
+.button-row{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
 .green-button{
   display: flex;
   align-items: center;
@@ -71,6 +84,17 @@ h2{
   
 }
 
+.green-button a{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.02em;  
+  color:#E8F6F4;
+  text-decoration: none;
+
+}
+
 .white-button{
   display: flex;
   align-items: center;
@@ -83,18 +107,18 @@ h2{
   height: 62px;
   left: 905px;
   top: 469px;
+}
 
+.white-button a{
    /*Button text*/
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: -0.02em;  
-  color:#2F796D;
-  padding: 2%;
-  cursor: pointer;
-  justify-content: center;
-  
+   font-style: normal;
+   font-weight: bold;
+   font-size: 13px;
+   line-height: 15px;
+   letter-spacing: -0.02em;  
+   color:#2F796D;
+   cursor: pointer;
+   text-decoration: none;  
 }
 
 .red-btn{

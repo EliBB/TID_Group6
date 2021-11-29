@@ -6,28 +6,34 @@
 
 .placeholder{
     display: flex;
+    flex-direction: column;
+    min-width: 70%;
+    
 }
 
-.header-row{
+/* .header-row imported from App.css{
     display: flex;
-}
+    justify-content: left;
+} */
 
 .signUp-form{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    justify-self: center;
     flex-wrap: wrap;
-    margin-top: 10%;
+   
 }
 
 .signUp-row{
     display: flex;
+    flex-direction: column;
+    justify-content: left;
+    
+    margin-bottom: 2%;
 }
 
 .select-form{
-    border: 3px solid #82D9CA;
-    box-sizing: border-box;
-    border-radius: 10px;
-
     min-width: 100%;
     min-height: 56px;
     font-size: 20px;
@@ -36,21 +42,28 @@
     outline: none;
 }
 
-.button-row{
+/* 
+.button-row imported from App.css{
     display: flex;
     justify-content: space-between;
     margin-top: 5%;
     margin-bottom: 5%;
-}
+} */
 
 .info-container{
     display: flex;
     flex-direction: row;
 }
 
-.info-row{
+.info-col{
     display: flex;
     flex-direction: column;
+    margin-left: 20%;
+}
+
+.info-row{
+    display: flex;
+    
 }
 
 .add-button{

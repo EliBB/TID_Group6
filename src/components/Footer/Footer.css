@@ -2,13 +2,10 @@
     display: flex;
     justify-content: left;
     background-color: #F2F2F2;
-    padding: 2%;
     flex-wrap: wrap;
-    max-width: 100%;
     bottom: 0;
     clear: both;
-    position: relative;
-    margin-top:auto; 
+    position: relative; 
 }
 
 .logo{

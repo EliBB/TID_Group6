@@ -1,6 +1,7 @@
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import MenuBar from './components/MenuBar/MenuBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import {MenuBar} from './components/MenuBar/MenuBar';
 import Footer from './components/Footer/Footer';
 
 
@@ -10,29 +11,44 @@ import ExcursionOverview from './components/Excursions/ExcursionOverview';
 import BookSeats from './components/MenuBar/BookSeats';
 import Feedback from './components/MenuBar/Feedback';
 import Profile from './components/MenuBar/Profile';
-
-
+import Login from './components/Login/Login';
+import Register from './components/Login/Register';
 
 function App() {
+/*   const [isLoggedIn, setIsLoggedIn] = useState(false);
+ */
+  
   return (
-    <BrowserRouter>
-      <div>
-        <MenuBar/>
-        
+     /* isLoggedIn ? ( */ 
 
-        <Switch>
-          <Route path="/excursions" exact render={Excursions}/>
-          <Route path="excursionsOverview" render={ExcursionOverview}/>
-          <Route path="/bookSeats" render={BookSeats}/>
-          <Route path="/feedback" render={Feedback}/>
-          <Route path="/profile" render={Profile}/>
-          <Route path="/" exact render={Home}/>
-        </Switch>  
+    <div className="App">
+      <BrowserRouter basename="/">
+
+        <MenuBar/>
+
+        <Routes>
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/login" element={<Login/>}/>
+          
+          <Route path="/excursions" exact element={<Excursions/>}/>
+          <Route path="excursionsOverview" element={<ExcursionOverview/>}/>
+          <Route path="/bookSeats" element={<BookSeats/>}/>
+          <Route path="/feedback" element={<Feedback/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+        
+          <Route path="/" element={<Home/>}/>
+        </Routes>  
+        
+      
+      {/*  ) : */}
+        
+          {/* <Login setIisLoggedIn={setIsLoggedIn} /> */}
 
         <Footer/>
-      </div>
+        </BrowserRouter>
+    </div>
+    
 
-    </BrowserRouter>
   );
 }
 

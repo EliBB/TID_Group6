@@ -5,24 +5,25 @@ import Step2 from './Step2';
 import Confirm from "./Confirm";
 import ExcursionInfo from '../Excursions/ExcursionInfo';
 import ExcursionOverview from "../Excursions/ExcursionOverview";
+import DutyPriorities from "../smallComponents/DutyPriotities";
 
 
 function SignUpForm(){
     const [step, setStep] = useState(1);
 
     const [member, setMember] = useState({
-        firstname: "",
+        memberFirstname: "",
         lastname: "",
         address: "",
         email: "",
         phone:"",
-        age: "", 
+        memberAge: "", 
         role: ""
     })
 
     const [familyMember, setFamilyMember] = useState([{
-        name: "",
-        age: ""
+        familyFirstname: "",
+        familyAge: ""
     
     }])
 
@@ -34,13 +35,25 @@ function SignUpForm(){
         setStep(step - 1);
     }
 
-    const handleChange = input => event =>{
+    const handleMemberChange = memberInput => event =>{
         const {value} = event.target;
 
         setMember(goBackStep => ({
-            ...goBackStep, [input]: value
+            ...goBackStep, [memberInput]: value
         }))
     }
+
+    const handleFamilyChange = familyInput => event =>{
+        const {value} = event.target;
+
+        setFamilyMember(goBackStep => ({
+            ...goBackStep, [familyInput]: value
+        }))
+    }
+
+    function progressBar(){
+        <progress max="4" value={step}/>
+    } 
 
     switch (step){
         case 1:
@@ -60,7 +73,7 @@ function SignUpForm(){
         case 3:
             return(
                 <div className="container">
-                    <Step1 goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleChange} input={member}/>
+                    <Step1 goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleMemberChange} memberInput={member}/>
                     
                 </div>
             );
@@ -68,13 +81,13 @@ function SignUpForm(){
         case 4:
             return(
                 <div className="container">
-                    <Step2 goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleChange} input={member}/>
+                    <Step2 goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleFamilyChange} familyInput={familyMember}/>
                 </div>
             );
         case 5:
             return(
                 <div className="container"> 
-                    <Confirm input={member} goBackStep={goBackStep}/>
+                    <Confirm memberInput={member} familyInput={familyMember} goBackStep={goBackStep}/>
                 </div>
             )
         default:
