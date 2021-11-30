@@ -1,5 +1,5 @@
 import React from "react";
-import ColoredLine from "../smallComponents/LineHeader"
+import LineHeader from "../smallComponents/LineHeader"
 import OverviewExcursions from "../smallComponents/OverviewExcursions";
 import './ExcursionOverview.css'
 
@@ -13,40 +13,27 @@ const ExcursionOverview = ({goNextStep}) => {
     
     return(
         <div className="member-container">
-            <div className="member-header">
-                <div className="header-member">
-                    <h1 className="header1">Excursions</h1>
-                </div>
-                
+            <h1 className="overview-h">Excursions</h1>
 
-                <div className="horizontal-line">
-                    <ColoredLine></ColoredLine>
-                </div>
-            </div>
+            <LineHeader></LineHeader>
 
-            <div className="member-excursions">
+            <div className="all-excursions">
+                {excursions.map(excursion => (
+                    <div className="one-excursion" key={excursion.excursionId}>
 
-                <div className="all-excursions">
-                    {excursions.map(excursion => (
-                        <div className="one-excursion" key={excursion.excursionId}>
+                        <OverviewExcursions type={excursion.type}
+                        where={excursion.where}
+                        date={excursion.date}
+                        actionBtn="Get Info"></OverviewExcursions>
 
-                            <div className="info-excursion">
-                                <OverviewExcursions type={excursion.type}
-                                where={excursion.where}
-                                date={excursion.date}
-                                actionBtn="Get Info"></OverviewExcursions>
-                            </div>
-
-                            <div className="button-getInfo">
-                                <button className="green-button" onClick={goNextStep}>
-                                    Get info
-                                </button>
-                            </div>
-                        
+                        <div className="button-getinfo">
+                            <button className="green-button" onClick={goNextStep}>
+                                Get info
+                            </button>
                         </div>
-                    ))}
-                </div>
-
+                        
+                    </div>
+                ))}
             </div>
             
         </div>

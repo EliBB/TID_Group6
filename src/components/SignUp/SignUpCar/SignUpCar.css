@@ -1,0 +1,31 @@
+.carSignUp-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trans-container{
+    border: solid #82d9ca;
+    border-radius: 10px;
+    width: 580px;
+    height: 300px;
+    margin: 2%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.t-header{
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+
+

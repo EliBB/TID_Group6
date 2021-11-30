@@ -1,41 +1,25 @@
 .member-container{
     display: flex;
-
-}
-
-.header-member{
-    height: 70px;
-
-}
-
-.member-excursions{
-    display: flex;
     flex-direction: column;
+}
 
-    margin-left: 20px;
-    margin-top: 180px;
-    width: 900px;
-
+.overview-h{
+    margin-left: -6em;
 }
 
 .all-excursions{
     display: flex;
     flex-direction: column;
-    
+    margin: 2%;
 }
 
 .one-excursion{
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 
-.info-excursion{
-    width: 800px;
-    
-}
-
-.button-getInfo{
-    margin-bottom: 10px;
+.button-getinfo{
+    margin: 2%;
+    margin-top: 40px;
 }
