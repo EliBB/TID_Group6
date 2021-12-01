@@ -31,10 +31,13 @@ const ExcursionOverview = ({goNextStep}) => {
                         <div className="one-excursion" key={excursion.excursionId}>
 
                             <div className="info-excursion">
-                                <OverviewExcursions type={excursion.type}
+                                <OverviewExcursions 
+                                type={excursion.type}
                                 where={excursion.where}
                                 date={excursion.date}
-                                actionBtn="Get Info"></OverviewExcursions>
+                                actionBtn="Get Info">
+                                    
+                                </OverviewExcursions>
                             </div>
 
                             <div className="button-getInfo">

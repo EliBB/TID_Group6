@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import './SignUp.css';
-import Step1 from './Step1';
-import Step2 from './Step2';
+import AddMember from './1AddMember';
+import AddFamily from './2AddFamily';
 import Confirm from "./Confirm";
 import ExcursionInfo from '../Excursions/ExcursionInfo';
 import ExcursionOverview from "../Excursions/ExcursionOverview";
-import DutyPriorities from "../smallComponents/DutyPriotities";
+
 
 
 function SignUpForm(){
@@ -18,7 +18,6 @@ function SignUpForm(){
         email: "",
         phone:"",
         memberAge: "", 
-        role: ""
     })
 
     const [familyMember, setFamilyMember] = useState([{
@@ -73,7 +72,7 @@ function SignUpForm(){
         case 3:
             return(
                 <div className="container">
-                    <Step1 goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleMemberChange} memberInput={member}/>
+                    <AddMember goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleMemberChange} memberInput={member}/>
                     
                 </div>
             );
@@ -81,15 +80,19 @@ function SignUpForm(){
         case 4:
             return(
                 <div className="container">
-                    <Step2 goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleFamilyChange} familyInput={familyMember}/>
+                    <AddFamily goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleFamilyChange} familyInput={familyMember} setFamilyInput={setFamilyMember}/>
                 </div>
             );
+
+
+
         case 5:
             return(
-                <div className="container"> 
-                    <Confirm memberInput={member} familyInput={familyMember} goBackStep={goBackStep}/>
+                <div className="container">
+                    
                 </div>
             )
+
         default:
             return(
                 <div className="container">
@@ -102,3 +105,8 @@ function SignUpForm(){
 }
 
 export default SignUpForm;
+
+
+{/* <div className="container"> 
+                    <Confirm memberInput={member} familyInput={familyMember} goBackStep={goBackStep}/>
+                </div> */}

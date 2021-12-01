@@ -1,16 +1,44 @@
 import React from "react";
+import Parse from "parse";
 import './SignUp.css';
+import BtnDelete from '../smallComponents/BtnDelete'
 
-const Step2 = ({goNextStep, goBackStep, handleData, familyInput}) => {
+function AddFamily ({
+    goNextStep, 
+    goBackStep, 
+    handleData, 
+    familyInput,
+    }){
     
-    const handleSubmit = (event) => {
+
+    async function addFamilyMembers(){
+        const familyMembers = Parse.Object.extend("familyMembers");
+
+        const newFamilyMembers = new familyMembers();
+        newFamilyMembers.set("familyFirstname", familyInput.familyFirstname);
+        newFamilyMembers.set("familyAge", familyInput.familyAge)
+
+        newFamilyMembers.save()
+        .then((newFamilyMembers)=>{
+            goNextStep();
+            console.log("Family members added" + newFamilyMembers)
+        }, (error) => {
+            alert ("Error " + error.message)
+        })
+    }
+
+    function handleSubmit(event){
         event.preventDefault();
     }
 
-  /*   function addNewFamilyMember(){
-        setFamilyMember([...familyMember, {familyFirstname:"", familyAge:""}])
+    function addNewFamilyMember(){
+        familyInput([...familyInput, {familyFirstname: "", familyAge:""}])
+        console.log("add new member clicked")
     }
- */
+
+    function deleteFamilyMember(){
+        console.log("member deleted")
+    }
 
     return(
         <div className="placeholder">
@@ -18,7 +46,6 @@ const Step2 = ({goNextStep, goBackStep, handleData, familyInput}) => {
                 <h1>Add Members</h1>
             </div>
             
-
             <form className="signUp-form" onSubmit={handleSubmit}>
                 <div className="info-container">
                     <div className="col-row"> 
@@ -58,11 +85,13 @@ const Step2 = ({goNextStep, goBackStep, handleData, familyInput}) => {
                 <br/>
 
                 <div className="add-button">
-                    <button className="green-button" /* onClick={addNewFamilyMember} */>
-                        Add family member
+                    <button className="green-button" onClick={addNewFamilyMember}>
+                        Add new family member
                     </button>
                 </div>
             
+                <BtnDelete onClick={deleteFamilyMember}
+                />
 
                 <div className="button-row">
                     <button className="green-button" onClick={goBackStep}>
@@ -78,4 +107,4 @@ const Step2 = ({goNextStep, goBackStep, handleData, familyInput}) => {
     )
 }
 
-export default Step2;
+export default AddFamily;

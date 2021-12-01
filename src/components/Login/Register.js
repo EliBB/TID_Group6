@@ -44,13 +44,13 @@ function Register(){
         setRole(event.target.value);
     }
 
-    /* function handleSubmit(event){
+    function handleSubmit(event){
         event.preventDefault();
-    } */
+    } 
 
     return(
     <div className="container">
-        <form className="login-container" /* onSubmit={handleSubmit} */>
+        <form className="login-container" onSubmit={handleSubmit}>
             <div className="header">
                 <h1>Register</h1>
             </div>

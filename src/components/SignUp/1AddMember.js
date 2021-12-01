@@ -1,12 +1,36 @@
 import React from "react";
 import './SignUp.css';
+import Parse from "parse";
 
+function AddMember ({
+    goNextStep, 
+    goBackStep, 
+    handleData, 
+    memberInput}) {
 
-const Step1 = ({goNextStep, goBackStep, handleData, memberInput}) => {
+    async function createExcursionSignedUp(){
+        const ExcursionSignedUp = Parse.Object.extend("ExcursionSignedUp");
+        
+        const memberSignedUp = new ExcursionSignedUp();
+        memberSignedUp.set("memberFirstname", memberInput.memberFirstname);
+        memberSignedUp.set("lastname", memberInput.lastname)
+        memberSignedUp.set("address", memberInput.address)
+        memberSignedUp.set("email", memberInput.email)
+        memberSignedUp.set("phone", memberInput.phone)
+        memberSignedUp.set("memberAge", memberInput.memberAge)
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+        await memberSignedUp.save()
+        .then((memberSignedUp) => {
+            goNextStep();
+            console.log("New member signed to excursion " + memberSignedUp)
+        }, (error) => {
+            alert ("Error " + error.message)
+        });
     }
+
+    function handleSubmit(event){
+        event.preventDefault();
+    } 
 
     return(
         <div className="placeholder">
@@ -15,6 +39,7 @@ const Step1 = ({goNextStep, goBackStep, handleData, memberInput}) => {
             </div>
 
             <form className="signUp-form" onSubmit={handleSubmit}> 
+               
                 <div className="signUp-row">
                     <h3>First name</h3>
                     <label> 
@@ -88,36 +113,12 @@ const Step1 = ({goNextStep, goBackStep, handleData, memberInput}) => {
                     </label>
                 </div>
 
-                <div className="signUp-row">
-                    <h3>Your role</h3>
-                    <div className="select-form">
-                        <label>
-                            <input 
-                                type="radio" 
-                                value={memberInput.role} 
-                                name="role"
-                                onChange={handleData("role")}
-                                checked={true}/> 
-                                Member
-                        </label>
-
-                        <label>
-                            <input 
-                                type="radio" 
-                                value={memberInput.role} 
-                                name="role"
-                                onChange={handleData("role")}/>
-                                Organizer 
-                        </label>
-                    </div>
-                </div>
-
                 <div className="button-row">
                     <button className="green-button" onClick={goBackStep}>
                         Cancel
                     </button>
                     
-                    <button className="green-button" type="submit" onClick={goNextStep}>
+                    <button className="green-button" type="submit" onClick={createExcursionSignedUp}>
                         Next
                     </button>
                 </div>
@@ -125,4 +126,4 @@ const Step1 = ({goNextStep, goBackStep, handleData, memberInput}) => {
         </div>
     )
 }
-export default Step1;
+export default AddMember;
