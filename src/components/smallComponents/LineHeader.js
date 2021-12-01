@@ -1,7 +1,7 @@
 import React from "react";
 
 function LineHeader(){
-    const ColoredLine = () => (
+    const Line = () => (
         <hr
             style={{
                 background: '#2F796D',
@@ -13,7 +13,10 @@ function LineHeader(){
     );
 
     return(
-        <ColoredLine></ColoredLine>
+        <div className="line-header">
+            <Line></Line>
+        </div>
+        
     )
 }
 

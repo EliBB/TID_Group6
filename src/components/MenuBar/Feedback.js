@@ -1,8 +1,11 @@
 import React from 'react';
 
 function Feedback(){
+
     return(
-    <h1>Hello feedback</h1>
+        <div>
+            <h1>Feedback</h1>
+        </div>
     )
 }
 
