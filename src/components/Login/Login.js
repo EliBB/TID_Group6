@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router';
 import Parse from 'parse';
 import './Login.css';
+import InputForm from "../SignUp/InputForm";
 
 function Login(){
     const [email, setEmail] = useState();
@@ -32,36 +33,23 @@ function Login(){
 
     return(
     <div className="container">
-        <form className="login-container">
-            <div className="header">
-                <h1>Login</h1>
-            </div>
+        <h1>Login</h1>
+        <form className="input-form">
+            <InputForm
+                title="E-mail"
+                type="email"
+                value={email}
+                onChange={handleEmail} 
+            />
 
-            <div className="login-row">
-                <label>
-                    <h2>E-mail</h2>
-                    <input 
-                    className="input-field"
-                    type="email"
-                    value={email}
-                    onChange={handleEmail} 
-                    />
-                </label>
-            </div>
+            <InputForm
+                title="Password"
+                type="password"
+                value={password}
+                onChange={handlePassword} 
+            />   
 
-            <div className="login-row">
-                <label>
-                    <h2>Password</h2>
-                    <input className="input-field"
-                    type="password"
-                    value={password}
-                    onChange={handlePassword} 
-                    />
-                </label>
-            </div>
-        
-
-            <div className="button">                    
+            <div className="submit-button">                    
                 <button onClick={handleSubmit} type="submit" className="green-button">
                     <p>Login</p>
                 </button>

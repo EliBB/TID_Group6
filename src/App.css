@@ -1,134 +1,148 @@
 body{
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: -0.02em;
-  color: #285850;
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 17px;
+letter-spacing: -0.02em;
+color: #285850;
 }
 
 
 /* Header 1 */
 h1{
-  font-style: normal;
-  font-weight: bold;
-  font-size: 34px;
-  line-height: 40px;
-  letter-spacing: -0.02em;
-  color: #2F796D;
+font-style: normal;
+font-weight: bold;
+font-size: 34px;
+line-height: 40px;
+letter-spacing: -0.02em;
+color: #2F796D;
 }
 
 /* Header 2 */
 h2{
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 23px;
-  letter-spacing: -0.02em;
-  color: #2F796D;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+letter-spacing: -0.02em;
+color: #2F796D;
+}
+
+.page-header{
+display: flex;
+justify-content: left;
+flex-direction: column;
+min-width: 100%;
+}
+
+.container{
+display: flex;
+flex-wrap: wrap; 
+flex-direction: column;
+align-items: center;
+}
+
+.input-form{
+display: flex;
+flex-direction: column;
+margin-bottom: 8%;
+}
+
+.input-row{
+display: flex;
+flex-direction: column;
+margin-bottom: 5%;
 }
 
 .input-field{
-  background: #FFFFFF;
-  border: 3px solid #82D9CA;
-  box-sizing: border-box;
-  border-radius: 10px;
-
-  min-width: 100%;
-  min-height: 56px;
-  font-size: 20px;
-  font-weight: 700;
-  color:#285850;
-  outline: none;
-}
-
-
-.header-row{
-  display: flex;
-  justify-content: left;
+display: flex;
+border: 3px solid #82D9CA;
+box-sizing: border-box;
+border-radius: 10px;
+height: 56px;
+width: 400px;
+font-size: 20px;
+font-weight: 400;
+color:#285850;
+outline: none;
 }
 
 .button-row{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5%;
-  margin-bottom: 5%;
+display: flex;
+justify-content: space-between;
+}
+
+.single-button-row{
+    display: flex;
+    justify-content: left;
+    min-width: 100%;
 }
 
 .green-button{
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 
-  width: 105px;
-  height: 62px;
-  left: 905px;
-  top: 469px;
+width: 105px;
+height: 62px;
+left: 905px;
+top: 469px;
 
-  background-color: #2F796D;
-  border: solid 3px #2F796D;
-  border-radius: 10px;
+background-color: #2F796D;
+border: solid 3px #2F796D;
+border-radius: 10px;
 
-  /*Button text*/
-
-  padding: 2%;
-  cursor: pointer;
-  justify-content: center;
-
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: -0.02em;  
-  color:#E8F6F4;
-  
+padding: 2%;
+cursor: pointer;
+justify-content: center;
 }
 
-.green-button a{
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: -0.02em;  
-  color:#E8F6F4;
-  text-decoration: none;
-
+.green-button p{
+font-style: normal;
+font-weight: bold;
+font-size: 13px;
+line-height: 15px;
+letter-spacing: -0.02em;  
+color:#E8F6F4;
+text-decoration: none;
 }
 
 .white-button{
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 
-  background-color: #E8F6F4;
-  border: solid 3px #2F796D;
-  border-radius: 10px;  
+background-color: #FFFFFF;
+border: solid 3px #2F796D;
+border-radius: 10px;  
 
-  width: 105px;
-  height: 62px;
-  left: 905px;
-  top: 469px;
+width: 150px;
+height: 45px;
+left: 9219px;
+top: 950px;
+
+cursor: pointer;
+justify-content: center;
 }
 
-.white-button a{
-   /*Button text*/
-   font-style: normal;
-   font-weight: bold;
-   font-size: 13px;
-   line-height: 15px;
-   letter-spacing: -0.02em;  
-   color:#2F796D;
-   cursor: pointer;
-   text-decoration: none;  
+.white-button p{
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+letter-spacing: -0.02em;  
+color:#2F796D;
+cursor: pointer;
+text-decoration: none;  
 }
 
 .red-btn{
-  background-color: #F96C6C;
-  border: solid 3px #F96C6C;
-  border-radius: 10px;    
-  font-size: 20px;
-  font-weight: bold;
-  
-  color:#FFFFFF;
-  padding: 2%;
-  cursor: pointer;
+background-color: #F96C6C;
+border: solid 3px #F96C6C;
+border-radius: 10px;    
+font-size: 20px;
+font-weight: bold;
+
+color:#FFFFFF;
+padding: 2%;
+cursor: pointer;
 }

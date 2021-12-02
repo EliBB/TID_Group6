@@ -1,46 +1,26 @@
-.container{
+.input-role-row{
     display: flex;
-    justify-content: center;
-    min-width: 100%;
-}
-
-.login-container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;  
-}
-
-.header{
-    display: flex;
-    justify-content: left;
-}
-
-.login-row{
-    display: flex;
-    flex-wrap: wrap; 
-}
-
-.role-row{
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between;
-}
-
-.button{
-    display: flex;
-    justify-content: center;
-    margin: 5%;
-}
-
-.button p{
-    font-style: normal;
+    justify-content: space-around;
+    width: 400px;
+    font-size: 18px;
     font-weight: bold;
-    font-size: 13px;
-    line-height: 15px;
-    letter-spacing: -0.02em;  
+}
+
+.input-row-col{
+    display: flex;
+}
+
+.submit-button{
+    display: flex;
+    justify-content: right;
+}
+
+.submit-button p{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    align-items: center; 
     color:#E8F6F4;
     text-decoration: none;
 }
-
-/*.input-field is imported from App.css
-.button-row is imported from App.css*/

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import './SignUp.css';
-import AddMember from './1AddMember';
-import AddFamily from './2AddFamily';
-import Confirm from "./Confirm";
 import ExcursionInfo from '../Excursions/ExcursionInfo';
 import ExcursionOverview from "../Excursions/ExcursionOverview";
-
-
+import AddMember from './Steps/1AddMember';
+import AddFamily from './Steps/2AddFamily';
+import SignUpCar from "./Steps/3SignUpCar";
+import RegisterCar from "./Steps/4RegisterCar"
+import MoreSeats from "./Steps/5MoreSeats";
+import BookMoreSeats from "./Steps/6BookMoreSeats"
+import Confirm from "./Steps/7Confirm";
 
 function SignUpForm(){
     const [step, setStep] = useState(1);
@@ -23,8 +25,18 @@ function SignUpForm(){
     const [familyMember, setFamilyMember] = useState([{
         familyFirstname: "",
         familyAge: ""
-    
     }])
+
+    const [car, setCar] = useState({
+        licensePlate: "",
+        color: "",
+        carType: "",
+        numberOfFreeSeats: ""
+    })
+
+    const [neededSeats, setNeededSeats] = useState({
+        neededSeats: ""
+    })
 
     const goNextStep = () => {
         setStep(step + 1);
@@ -32,6 +44,10 @@ function SignUpForm(){
 
     const goBackStep = () => {
         setStep(step - 1);
+    }
+
+    const skipStep = () => {
+        setStep(step + 2);
     }
 
     const handleMemberChange = memberInput => event =>{
@@ -50,63 +66,78 @@ function SignUpForm(){
         }))
     }
 
-    function progressBar(){
-        <progress max="4" value={step}/>
-    } 
+    const handleCarChange = carInput => event =>{
+        const {value} = event.target;
+
+        setCar(goBackStep => ({
+            ...goBackStep, [carInput]: value
+        }))
+    }
+
+    const handleSeatChange = seatInput => event =>{
+        const {value} = event.target;
+
+        setNeededSeats(goBackStep => ({
+            ...goBackStep, [seatInput]: value
+        }))
+    }
 
     switch (step){
         case 1:
             return(
-                <div className="container">
-                    <ExcursionOverview goNextStep={goNextStep}/>
-                    
-                </div>
+                <ExcursionOverview goNextStep={goNextStep}/>
             );
+
         case 2:
             return(
-                <div className="container">
-                    <ExcursionInfo goNextStep={goNextStep} goBackStep={goBackStep}/>
-                    
-                </div>
+                <ExcursionInfo goNextStep={goNextStep} goBackStep={goBackStep}/>
             );
+
         case 3:
             return(
-                <div className="container">
-                    <AddMember goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleMemberChange} memberInput={member}/>
-                    
-                </div>
+                <AddMember goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleMemberChange} memberInput={member}/>
             );
 
         case 4:
             return(
-                <div className="container">
-                    <AddFamily goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleFamilyChange} familyInput={familyMember} setFamilyInput={setFamilyMember}/>
-                </div>
+                <AddFamily goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleFamilyChange} familyInput={familyMember} setFamilyInput={setFamilyMember}/>
             );
-
-
 
         case 5:
             return(
-                <div className="container">
-                    
-                </div>
-            )
+                <SignUpCar goNextStep={goNextStep} skipStep={skipStep} goBackStep={goBackStep}/>
+            );
+
+        case 6:
+            return(
+                <RegisterCar goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleCarChange} carInput={car}/>
+
+            );
+
+        case 7:
+            return(
+                <MoreSeats goNextStep={goNextStep} skipStep={skipStep} goBackStep={goBackStep}/>
+
+            );
+
+        case 8:
+            return(
+                <BookMoreSeats goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleSeatChange} seatInput={neededSeats}/>
+
+            );
+
+        case 9:
+            return(
+                <Confirm memberInput={member} familyInput={familyMember} carInput={car} seatInput={neededSeats} goBackStep={goBackStep}/>
+            );
+
 
         default:
             return(
-                <div className="container">
-                    <ExcursionOverview/>
-                </div>
-            )
-    }
-
-    
-}
+                <ExcursionOverview/>
+            );
+    };
+};
 
 export default SignUpForm;
 
-
-{/* <div className="container"> 
-                    <Confirm memberInput={member} familyInput={familyMember} goBackStep={goBackStep}/>
-                </div> */}

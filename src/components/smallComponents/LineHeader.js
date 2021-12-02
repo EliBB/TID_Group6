@@ -13,9 +13,9 @@ function LineHeader(){
     );
 
     return(
-        <div className="line-header">
+
             <Line></Line>
-        </div>
+
         
     )
 }
