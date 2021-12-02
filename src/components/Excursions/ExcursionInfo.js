@@ -1,4 +1,6 @@
 import React from 'react';
+import BackButton from '../smallComponents/Buttons/BackButton';
+import GreenButton from '../smallComponents/Buttons/GreenButton';
 import './ExcursionInfo.css';
 
 
@@ -17,72 +19,43 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
     ]
 
     return(
-        <div className="placeholder">
+        <>
             {excursionInfo.map(excursion => (
-            <div className="data">  
-                <div className="data-row" key={excursion.excursionId}>
-                    
-                        <div className="item">
-                            <p>{excursion.type}</p>
-                        </div>
-
-                        <div className="item">
-                            <p>{excursion.where}</p>
-                        </div>
-
-                        <div className="item">
-                            <p>{excursion.date}</p>
-                        </div>   
-                    
+            <div className="single-excursion-overview">  
+                <div className="single-excursion-row">
+                    <p>{excursion.type}</p>
+                    <p>{excursion.where}</p>
+                    <p>{excursion.date}</p>
                 </div>
                 
 
-                <div className="info-row">
-                    <div className="row">
-                        <div className="row-spec">
+                <div className="detail-row">
+                    <div className="specification-row">
+                        <div className="specification-text">
                             <p>Number of people: </p>
                         </div>
 
-                        <div className="row-item">
-                            <div className="col-item">
+                        <div className="specification-items">
                                 <h3>Adults: {excursion.adults}</h3>
-                            </div>
-
-                            <div className="col-item">
                                 <h3>Teenagers: {excursion.teenagers}</h3>
-                            </div>
-
-                            <div className="col-item">
                                 <h3>Children: {excursion.children}</h3>
-                            </div>
                         </div>
-
                     </div>
 
-                    <button className="green-button" type="submit" onClick={goNextStep}>
-                        Sign up 
-                    </button>
-
+                    <GreenButton text="Sign up" onClick={goNextStep}/>
                 </div>
                         
-                <div className="lists">  
-                    <div>
-                        <h1>Shopping List</h1>
-                    </div>
-                    <div>
-                        <h1>Duty List</h1>
-                    </div>
 
-                </div>
+                <h1>Shopping List</h1>
 
-                <button className="green-button" onClick={goBackStep}>
-                    Back
-                </button>
+                <h1>Duty List</h1>
 
+
+                <BackButton onClick={goBackStep}/>
             </div> 
             ))}
            
-        </div>
+        </>
     )
 }
 
