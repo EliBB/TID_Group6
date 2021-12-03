@@ -12,12 +12,12 @@ function Profile(){
     const result = [];
 
     const profileInfo = {
-        firstname: user.get("First_Name"),
-        lastname: user.get("Last_name"),
+        firstname: user.get("username"),
+        lastname: user.get("lastname"),
         email: user.get("email"), 
-        age: user.get("Age"),
-        address: user.get("Address"),
-        number: user.get("Phone_num"),
+        age: user.get("age"),
+        address: user.get("address"),
+        number: user.get("phone"),
     };
 
     async function retrieveExcursion(){
@@ -112,39 +112,24 @@ function Profile(){
 
                 <div className="profile-info-container">
                     <div className="profile-col1">
-                        <div className ="header-profile">
-                            <h2>{profileInfo.firstname} {profileInfo.lastname}</h2>
-                        </div>
+                        <h2 className ="header-profile">{profileInfo.firstname} {profileInfo.lastname}</h2>
                         <div className="image-profile">
                             <img src={profilePic} className="profilePic" alt="ProfilePic"/>
                         </div>
                     </div>
 
                     <div className="profile-col2">
-                        <div className ="profile-row-item">
-                            <h2>Email:</h2>
-                        </div>
-                        <div className ="profile-row-info">
-                            <p>{profileInfo.email}</p>
-                        </div>
-                        <div className ="profile-row-item">
-                            <h2>Age:</h2>
-                        </div>
-                        <div className ="profile-row-info">
-                            <p>{profileInfo.age}</p>
-                        </div>
-                        <div className ="profile-row-item">
-                            <h2>Address:</h2>
-                        </div>
-                        <div className ="profile-row-info">
-                            <p>{profileInfo.address}</p>
-                        </div>
-                        <div className ="profile-row-item">
-                            <h2>Phone Number:</h2>
-                        </div>
-                        <div className ="profile-row-info">
-                            <p>{profileInfo.number}</p>
-                        </div>
+                        <h2 className ="profile-row-item">Email:</h2>
+                        <p className ="profile-row-info">{profileInfo.email}</p>
+
+                        <h2 className ="profile-row-item">Age:</h2>
+                        <p className ="profile-row-info">{profileInfo.age}</p>
+
+                        <h2 className ="profile-row-item">Address:</h2>
+                        <p className ="profile-row-info">{profileInfo.address}</p>
+                        
+                        <h2 className ="profile-row-item">Phone Number:</h2>
+                        <p className ="profile-row-info">{profileInfo.number}</p>
                     </div>
                 </div>
                 
