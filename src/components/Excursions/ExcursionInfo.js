@@ -2,7 +2,7 @@ import React from 'react';
 import BackButton from '../smallComponents/Buttons/BackButton';
 import GreenButton from '../smallComponents/Buttons/GreenButton';
 import './ExcursionInfo.css';
-
+import ScrollableTable from '../smallComponents/ScrollableTable';
 
 const ExcursionInfo = ({goNextStep, goBackStep}) => {
 
@@ -17,6 +17,24 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
         shoppingList: []
         }
     ]
+
+    const shoppinglist = [
+        {id: 1, item: "Bread", amount: 10, unit: "kg"},
+        {id: 2, item: "Salmon", amount: 5, unit: "kg"},
+        {id: 3, item: "Rice", amount: 8, unit: "kg"},
+        {id: 4, item: "Grill Meat", amount: 10, unit: "kg"},
+        {id: 5, item: "Regular Milk", amount: 10, unit: "Liter"},
+        {id: 6, item: "Bread", amount: 10, unit: "kg"},
+        {id: 7, item: "Salmon", amount: 5, unit: "kg"},
+        {id: 8, item: "Rice", amount: 8, unit: "kg"},
+        {id: 9, item: "Grill Meat", amount: 10, unit: "kg"},
+        {id: 10, item: "Regular Milk", amount: 10, unit: "Liter"},
+        {id: 11, item: "Bread", amount: 10, unit: "kg"},
+        {id: 12, item: "Salmon", amount: 5, unit: "kg"},
+        {id: 13, item: "Rice", amount: 8, unit: "kg"},
+        {id: 14, item: "Grill Meat", amount: 10, unit: "kg"},
+        {id: 15, item: "Regular Milk", amount: 10, unit: "Liter"},
+      ]
 
     return(
         <>
@@ -47,6 +65,7 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
                         
 
                 <h1>Shopping List</h1>
+                <ScrollableTable listItems={shoppinglist}/>
 
                 <h1>Duty List</h1>
 
