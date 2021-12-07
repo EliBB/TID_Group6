@@ -1,0 +1,18 @@
+.book-cars-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-cars-table{
+    overflow-y: scroll;
+    margin: 2%;
+    height: 500px;
+}
+
+table.book-seats-list{
+    border: solid #2F796D;
+    border-radius: 30px;
+    border-collapse: collapse;
+    height: 500px;
+}

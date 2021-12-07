@@ -5,7 +5,7 @@ function ScrollableTable(props) {
 
     return(
         <div className="scrollable-table">
-            <table>
+            <table className="list-table">
                 <tr className="table-header">
                     <td>{props.headerOne}</td>
                     <td>{props.headerTwo}</td>
