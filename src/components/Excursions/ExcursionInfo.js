@@ -18,23 +18,36 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
         }
     ]
 
-    const shoppinglist = [
-        {id: 1, item: "Bread", amount: 10, unit: "kg"},
-        {id: 2, item: "Salmon", amount: 5, unit: "kg"},
-        {id: 3, item: "Rice", amount: 8, unit: "kg"},
-        {id: 4, item: "Grill Meat", amount: 10, unit: "kg"},
-        {id: 5, item: "Regular Milk", amount: 10, unit: "Liter"},
-        {id: 6, item: "Bread", amount: 10, unit: "kg"},
-        {id: 7, item: "Salmon", amount: 5, unit: "kg"},
-        {id: 8, item: "Rice", amount: 8, unit: "kg"},
-        {id: 9, item: "Grill Meat", amount: 10, unit: "kg"},
-        {id: 10, item: "Regular Milk", amount: 10, unit: "Liter"},
-        {id: 11, item: "Bread", amount: 10, unit: "kg"},
-        {id: 12, item: "Salmon", amount: 5, unit: "kg"},
-        {id: 13, item: "Rice", amount: 8, unit: "kg"},
-        {id: 14, item: "Grill Meat", amount: 10, unit: "kg"},
-        {id: 15, item: "Regular Milk", amount: 10, unit: "Liter"},
-      ]
+    const shoppingList = [
+        {id: 1, col1: "Bread", col2: 10, col3: "kg"},
+        {id: 2, col1: "Salmon", col2: 5, col3: "kg"},
+        {id: 3, col1: "Rice", col2: 8, col3: "kg"},
+        {id: 4, col1: "Grill Meat", col2: 10, col3: "kg"},
+        {id: 5, col1: "Regular Milk", col2: 10, col3: "Liter"},
+        {id: 6, col1: "Bread", col2: 10, col3: "kg"},
+        {id: 7, col1: "Salmon", col2: 5, col3: "kg"},
+        {id: 8, col1: "Rice", col2: 8, col3: "kg"},
+        {id: 9, col1: "Grill Meat", col2: 10, col3: "kg"},
+        {id: 10, col1: "Regular Milk", col2: 10, col3: "Liter"},
+        {id: 11, col1: "Bread", col2: 10, col3: "kg"},
+        {id: 12, col1: "Salmon", col2: 5, col3: "kg"},
+        {id: 13, col1: "Rice", col2: 8, col3: "kg"},
+        {id: 14, col1: "Grill Meat", col2: 10, col3: "kg"},
+        {id: 15, col1: "Regular Milk", col2: 10, col3: "Liter"},
+    ]
+
+    const dutyList = [
+        {id: 1, col1: "Clean up friday", col2: "Jens", col3: "Peter, Marie"},
+        {id: 2, col1: "Shopping", col2: "Jens", col3: "Peter, Marie"},
+        {id: 3, col1: "clean up saturday", col2: "Jens", col3: "Peter, Marie"},
+        {id: 4, col1: "Accounting", col2: "Jens", col3: "Peter, Marie"},
+        {id: 5, col1: "Plan treasure hunt", col2: "Jens", col3: "Peter, Marie"},
+        {id: 6, col1: "Treasure hun staff", col2: "Jens", col3: "Peter, Marie"},
+        {id: 7, col1: "Cooking friday lunch", col2: "Jens", col3: "Peter, Marie"},
+        {id: 8, col1: "Cooking saturday dinner", col2: "Jens", col3: "Peter, Marie"},
+        {id: 9, col1: "Dishes friday lunch", col2: "Jens", col3: "Peter, Marie"},
+        {id: 10, col1: "Dishes friday dinner", col2: "Jens", col3: "Peter, Marie"},
+    ]
 
     return(
         <>
@@ -63,12 +76,22 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
                     <GreenButton text="Sign up" onClick={goNextStep}/>
                 </div>
                         
-
+                <div>
                 <h1>Shopping List</h1>
-                <ScrollableTable listItems={shoppinglist}/>
+                
+                </div>
+                <ScrollableTable 
+                listItems={shoppingList}
+                headerOne="Item"
+                headerTwo="Amount"
+                headerThree="Unit"/>
 
                 <h1>Duty List</h1>
-
+                <ScrollableTable 
+                listItems={dutyList}
+                headerOne="Duty"
+                headerTwo="Boss"
+                headerThree="Manning"/>
 
                 <BackButton onClick={goBackStep}/>
             </div> 
