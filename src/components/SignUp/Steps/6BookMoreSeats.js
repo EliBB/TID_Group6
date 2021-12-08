@@ -15,10 +15,10 @@ function BookMoreSeats({
 
 
     async function bookCarSeats(){
-        const carSeats = Parse.Object.extend("CarSeats")
+        const carSeats = Parse.Object.extend("NeededCarSeats")
 
         const neededSeats = new carSeats();
-        neededSeats.set("neededSeats", seatInput.numberOfSeats);
+        neededSeats.set("numberOfSeats", seatInput.numberOfSeats);
 
         try{
             let result = await neededSeats.save()

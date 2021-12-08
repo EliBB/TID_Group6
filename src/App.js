@@ -13,39 +13,29 @@ import Feedback from './components/MenuBar/Feedback';
 import Profile from './components/MenuBar/Profile';
 import Login from './components/Login/Login';
 import Register from './components/Login/Register';
+import CreateExcursion from './components/Excursions/CreateExcursion';
 
 function App() {
-/*   const [isLoggedIn, setIsLoggedIn] = useState(false);
- */
-  
   return (
-     /* isLoggedIn ? ( */ 
-
     <div className="App">
-      <BrowserRouter basename="/">
+      <BrowserRouter>
 
         <MenuBar/>
 
         <Routes>
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
-          
           <Route exact path="/excursions" element={<Excursions/>}/>
           <Route path="excursionsOverview" element={<ExcursionOverview/>}/>
           <Route path="/bookSeats" element={<BookSeats/>}/>
           <Route path="/feedback" element={<Feedback/>}/>
           <Route path="/profile" element={<Profile/>}/>
-        
-          <Route path="/" element={<Home/>}/>
+          <Route path="/createExcursion" element={<CreateExcursion/>}/>
+          <Route exact path="/" element={<Home/>}/>
         </Routes>  
         
-      
-      {/*  ) : */}
-        
-          {/* <Login setIisLoggedIn={setIsLoggedIn} /> */}
-
         <Footer/>
-        </BrowserRouter>
+      </BrowserRouter>
     </div>
     
 

@@ -3,7 +3,6 @@ import Parse from "parse";
 import {useNavigate} from 'react-router-dom';
 import './Login.css';
 import InputForm from "../SignUp/InputForm";
-import PageHeader from "../smallComponents/PageHeader";
 
 function Register(){
     const [username, setUsername] = useState("");
@@ -24,13 +23,12 @@ function Register(){
         user.set("role", role)
         
         try{
-            await user.signUp();
-            console.log("User registred" + username + email + role)
+            await user.signUp();           
         } catch (error){
             alert("Error " + error.message)
-        }
+        } 
         navigate("/profile")
-    }
+    }   
 
     function usernameChange(event){
         setUsername(event.target.value);
@@ -53,7 +51,7 @@ function Register(){
         <h1>Register</h1>
         <form className="input-form">
             <InputForm
-                title="Username"
+                title="First name"
                 type="text"
                 value={username}
                 onChange={usernameChange}

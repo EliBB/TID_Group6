@@ -17,12 +17,14 @@ function RegisterCar({
 
     async function addCar(){
         const car = Parse.Object.extend("Car");
+        const memberRelation = Parse.User.current();
         
         const newCar = new car();
         newCar.set("licenseplate", carInput.licensePlate);
         newCar.set("color", carInput.color)
         newCar.set("cartype", carInput.carType)
         newCar.set("numberoffreeseats", carInput.numberOfFreeSeats)
+        newCar.set("memberRelation", memberRelation);
 
         try{
             let result = await newCar.save();

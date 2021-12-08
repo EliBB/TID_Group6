@@ -13,24 +13,25 @@ function AddMember ({
     memberInput}) {
 
     async function saveNewMember(){
-        const member = Parse.Object.extend("Member");
-        
-        const memberSignedUp = new member();
-        memberSignedUp.set("memberFirstname", memberInput.memberFirstname);
+        const member = Parse.Object.extend("User");
+
+        const memberSignedUp = Parse.User.current();        
+        memberSignedUp.set("username", memberInput.memberFirstname);
         memberSignedUp.set("lastname", memberInput.lastname)
         memberSignedUp.set("address", memberInput.address)
-        memberSignedUp.set("email", memberInput.email)
         memberSignedUp.set("phone", memberInput.phone)
         memberSignedUp.set("memberAge", memberInput.memberAge)
 
         try{
             let result = await memberSignedUp.save()
-            console.log("New member created" + result.id)
+            console.log(result)
             goNextStep();
         } catch(error){
             alert("Error " + error.message)
         }
     } 
+    const memberSignedUp = Parse.User.current(); 
+    const firstname = memberSignedUp.get("username");
 
     function handleSubmit(event){
         event.preventDefault();
@@ -47,7 +48,7 @@ function AddMember ({
                     title="First name"
                     type="text"
                     name="memberFirstname"
-                    value={memberInput.memberFirstname}
+                    value={firstname}
                     onChange={handleData("memberFirstname")}
                 />
 
@@ -65,14 +66,6 @@ function AddMember ({
                     name="adress"
                     value={memberInput.address}
                     onChange={handleData("address")}
-                />
-
-                <InputForm
-                    title="E-mail"
-                    type="email"
-                    name="email"
-                    value={memberInput.email}
-                    onChange={handleData("email")}
                 />
 
                 <InputForm

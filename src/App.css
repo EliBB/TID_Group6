@@ -136,13 +136,31 @@ text-decoration: none;
 }
 
 .red-btn{
-background-color: #F96C6C;
-border: solid 3px #F96C6C;
-border-radius: 10px;    
-font-size: 20px;
-font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-color:#FFFFFF;
-padding: 2%;
-cursor: pointer;
+    background-color: #F96C6C;
+    border: solid 3px #F96C6C;
+    border-radius: 10px;    
+
+    width: 105px;
+    height: 62px;
+    left: 905px;
+    top: 469px;
+
+    color:#FFFFFF;
+    padding: 2%;
+    cursor: pointer;
 }
+
+.red-btn p{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: -0.02em;  
+    color:#E8F6F4;
+    text-decoration: none;
+
+} 

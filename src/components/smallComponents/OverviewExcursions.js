@@ -31,7 +31,9 @@ function OverviewExcursions(props){
                 <p className="line">|</p>
 
                 <div className="info">
-                    <h2>{props.date}</h2>
+                    <h2>{props.fromDate}</h2>
+                    <h2>-</h2>
+                    <h2>{props.toDate}</h2>
                 </div>
 
             </div>

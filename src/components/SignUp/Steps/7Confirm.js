@@ -1,18 +1,21 @@
 import React from "react";
 import '../SignUp.css';
-
 import { useNavigate } from "react-router";
-
 import PageHeader from "../../smallComponents/PageHeader";
 import GreenButton from "../../smallComponents/Buttons/GreenButton";
 
 const Confirm = ({memberInput, familyInput, carInput, seatInput, goBackStep}) => {
-    const {memberFirstname, lastname, address, email, phone, memberAge, role} = memberInput;
+    const {memberFirstname, lastname, address, email, phone, memberAge} = memberInput;
     const {familyFirstname, familyAge} = familyInput;
     const {licensePlate, color, carType, numberOfFreeSeats} = carInput;
     const {neededSeats} = seatInput;
 
     const navigate = useNavigate;
+
+    function confirm (){
+        console.log("Confirm clicked");
+        /* navigate("/profile"); */
+    }
 
     return(
         <div className="info-box-container">
@@ -51,13 +54,10 @@ const Confirm = ({memberInput, familyInput, carInput, seatInput, goBackStep}) =>
                         <h3>You will recieve an e-mail when the car seat reservation is open.</h3>
                     </div>
                 </div>
-               
             </div>
 
-
-
             <div className="button-row">
-                <GreenButton text="Confirm" onClick={navigate("/profile")}/>
+                <GreenButton text="Confirm" onClick={confirm}/>
             </div>
         </div>
     )
