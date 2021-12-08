@@ -21,13 +21,13 @@ export function MenuBar(){
             {!Parse.User.current() && (
                 <div className="menu-container">
                     <div className="menu-link">
-                        <Link to="/register">
+                        <Link to="/register" key="7">
                             Register
                         </Link>
                     </div>
                     
                     <div className="menu-link">
-                        <Link to="/login">
+                        <Link to="/login" key="6">
                             Login
                         </Link>
                     </div>
@@ -37,8 +37,8 @@ export function MenuBar(){
             {Parse.User.current() && (
                 <div className="menu-container">
                     {menuLinks.map(links => (
-                        <div className="menu-link" key={links.linkId}>
-                            <Link to={links.link}>
+                        <div className="menu-link" >
+                            <Link to={links.link} key={links.linkId}>
                                 {links.menuItem}
                             </Link>
                         </div>

@@ -13,15 +13,18 @@ function AddFamily ({
     goBackStep, 
     handleData, 
     familyInput,
+    setFamilyInput
     }){
     
 
     async function addFamilyMembers(){
-        const familyMembers = Parse.Object.extend("familyMembers");
+        const familyMembers = Parse.Object.extend("FamilyMembers");
+        const currentUser = Parse.User.current();
 
         const newFamilyMembers = new familyMembers();
         newFamilyMembers.set("familyFirstname", familyInput.familyFirstname);
-        newFamilyMembers.set("familyAge", familyInput.familyAge)
+        newFamilyMembers.set("familyAge", familyInput.familyAge);
+        newFamilyMembers.set("memberRelation", currentUser)
 
 
         try{
@@ -38,7 +41,7 @@ function AddFamily ({
     }
 
     function addNewFamilyMember(){
-        familyInput([...familyInput, {familyFirstname: "", familyAge:""}])
+        setFamilyInput([...familyInput, {familyFirstname: "", familyAge:""}])
         console.log("add new member clicked")
     }
 

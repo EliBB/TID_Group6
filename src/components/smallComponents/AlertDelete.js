@@ -10,11 +10,11 @@ function AlertDelete(props){
 
                 <div className="container-btns">
                     <button className="green-button" onClick={() => props.setTrigger(false)}>
-                        Cancel
+                        <p>Cancel</p>
                     </button>
 
                     <button className="red-btn">
-                        Delete
+                        <p>Delete</p>
                     </button>
                 </div>
             </div>
