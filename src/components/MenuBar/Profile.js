@@ -70,7 +70,7 @@ function Profile(){
 
     retrieveExcursion();
     console.log("EXCUR ", excursions)
-
+    
     return(
         <div className="main-container">
             <h1 className ="h1-profile">Profile</h1>
@@ -81,7 +81,7 @@ function Profile(){
                 
                 <div className="profile-info-container">
                     <div className="profile-col1">
-                        <h2 className ="header-profile">{profileInfo.name}</h2>
+                        <h2 className ="header-profile">{profileInfo.firstname} {profileInfo.lastname}</h2>
 
                         <img src={profilePic} className="profilePic" alt="ProfilePic"/>
                     </div>
@@ -103,14 +103,16 @@ function Profile(){
                 
             </div>
 
+
             <h2 className ="header-excursions">Registered excursions:</h2>
                 <div className="excursion-overview">
+                {/* I cannot get this to work - To show the objects of the excursions array from earlier */}
                     {excursions.map((excursion) => (
                         <div className="excursion">
                                 <OverviewExcursions ClassName="info-bar"
-                                    key={excursion.get("excursionID")}
-                                    type={excursion.get("type")}
-                                    where={excursion.get("where")}
+                                    key={excursion.excursionId}
+                                    type={excursion.type}
+                                    where={excursion.where}
                                     fromDate={excursion.from_date}
                                     toDate = {excursion.to_date}
                                     actionBtn="Get Info">
