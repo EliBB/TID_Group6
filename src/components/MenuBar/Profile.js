@@ -9,7 +9,7 @@ import Parse from 'parse'
 function Profile(){
 
     const user = Parse.User.current();
-    const result = [];
+    // const result = [];
 
     const profileInfo = {
         firstname: user.get("username"),
@@ -20,7 +20,11 @@ function Profile(){
         number: user.get("phone"),
     };
 
+    const excursions = []
+
     async function retrieveExcursion(){
+        const result = [];
+
         const getExcursions = Parse.Object.extend("ExcursionSignedUp");
         const query = new Parse.Query(getExcursions);
         query.equalTo("MemberID", user);
@@ -29,71 +33,47 @@ function Profile(){
         try {
             const results = await query.find();
             //console.log(`ParseObjects found: ${JSON.stringify(results)}`);
-
             for(let i = 0; i < results.length; i++){
                 const object = results[i].get("ExcursionID");
-                result.push(object.id);
+                if(!result.includes(object.id)){
+                    result.push(object.id);
+                }
             }
 
             } catch (error) {
                 console.log(`Error: ${JSON.stringify(error)}`);
             } 
-    }
-
-    //console.log(user.get("First_Name"));
-    retrieveExcursion();
-
-    console.log(result);
-
-    const excursions = [
-        // {excursionId: 1, type: 'Wilderness Trip', where: 'Sweden', date: '31. june - 5 july 2022'},
-        // {excursionId: 2, type: 'Cottage Trip', where: 'Norway', date: '4-7 january 2022'},
-        // {excursionId: 3, type: 'Glamping', where: 'Denmark', date: '10-12 september 2022'},
-    ]
-
-    async function addExcursions(){
-        const excur = Parse.Object.extend("Excursion");
-        const q = new Parse.Query(excur);
-                
-        try{
-            for(let x=0; x < result.length; x++){
-                q.equalTo("objectId", result[x]);
-            }
-            const result2 = await q.find();
-            console.log(`ParseObjects found: ${JSON.stringify(result2)}`);
-
-            for(let j = 0; j < result2.length; j++){
-                const excursionId = j+1;
-
-                const type = result2[j].get("name");
-                console.log(type);
-
-                const where = result2[j].get("country");
-                console.log(where);
-
-                const date = [result2[j].get("from_date"), result2[j].get("to_date")];
-                console.log(date);
-
-                const ex = {};
-                ex["excursionId"] = excursionId;
-                ex["type"] = type;
-                ex["where"] = where;
-                ex[date] = date;
-                excursions.push(ex);
-            }
-
-            console.log(excursions);
+        
+        for(let j = 0; j < result.length; j++){
+            const excur = Parse.Object.extend("Excursion");
+            const q = new Parse.Query(excur)
+            q.equalTo("objectId", result[j])
             
+            try{
+                const res = await q.find();
+                for(let l = 0; l < res.length; l++){
+                    const excursionId = res[l].id;
+                    const name = res[l].get("name");
+                    const where = res[l].get("country");
+                    const fromDate = res[l].get("from_date");
+                    const toDate = res[l].get("to_date")
 
-        } catch(e) {
-            console.log("Error!" + e);
+                    const ex = {};
+                    ex["excursionId"] = excursionId;
+                    ex["type"] = name;
+                    ex["where"] = where;
+                    ex["from_date"] = fromDate;
+                    ex["to_date"] = toDate;
+                    excursions.push(ex);
+                }
+            }catch (e){
+                console.log(`Error: ${JSON.stringify(e)}`);
+            }
         }
     }
 
     retrieveExcursion();
-    addExcursions();
-
-    console.log(excursions);
+    console.log("EXCUR ", excursions)
 
     return(
         <div className="main-container">
@@ -124,10 +104,10 @@ function Profile(){
 
                         <h2 className ="profile-row-item">Age:</h2>
                         <p className ="profile-row-info">{profileInfo.age}</p>
-
+                        
                         <h2 className ="profile-row-item">Address:</h2>
                         <p className ="profile-row-info">{profileInfo.address}</p>
-                        
+
                         <h2 className ="profile-row-item">Phone Number:</h2>
                         <p className ="profile-row-info">{profileInfo.number}</p>
                     </div>
@@ -143,16 +123,16 @@ function Profile(){
                 <div className="users-excursions">
 
                     <div className="excursion-overview">
-                        {excursions.map(excursion => (
-                            <div className="excursion" key={excursion.excursionId}>
-                                
-                                <div className="info-bar">
-                                    <OverviewExcursions type={excursion.type}
-                                    where={excursion.where}
-                                    date={excursion.date}
-                                    actionBtn="Get Info"></OverviewExcursions>
-                                </div>
-
+                        {excursions.map((excursion) => (
+                            <div className="excursion">
+                                    <OverviewExcursions 
+                                        key={excursion.get("excursionID")}
+                                        type={excursion.get("type")}
+                                        where={excursion.get("where")}
+                                        fromDate={excursion.from_date}
+                                        toDate = {excursion.to_date}
+                                        actionBtn="Get Info">
+                                    </OverviewExcursions>
                                 <div className="button-info">
                                     <BtnDelete className="button-info" actionBtn="Delete Registration" ></BtnDelete>
                                 </div>
