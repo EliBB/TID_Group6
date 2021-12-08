@@ -7,9 +7,7 @@ import BtnDelete from "../smallComponents/BtnDelete";
 import Parse from 'parse'
 
 function Profile(){
-
     const user = Parse.User.current();
-    // const result = [];
 
     const profileInfo = {
         firstname: user.get("username"),
@@ -28,11 +26,9 @@ function Profile(){
         const getExcursions = Parse.Object.extend("ExcursionSignedUp");
         const query = new Parse.Query(getExcursions);
         query.equalTo("MemberID", user);
-        //console.log(query);
 
         try {
             const results = await query.find();
-            //console.log(`ParseObjects found: ${JSON.stringify(results)}`);
             for(let i = 0; i < results.length; i++){
                 const object = results[i].get("ExcursionID");
                 if(!result.includes(object.id)){
