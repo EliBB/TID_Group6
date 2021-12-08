@@ -1,5 +1,4 @@
 import React from 'react';
-import ScrollableTable from '../smallComponents/ScrollableTable';
 
 function Feedback(){
 

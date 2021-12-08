@@ -1,0 +1,30 @@
+.confirm-seats-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booked-cars-info{
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    width: 600px;
+    border-right: solid #C4F2EB;
+    border-top: solid #C4F2EB;
+    border-left: solid #C4F2EB;
+    border-radius: 10px;
+}
+
+.one-car-info{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: solid #C4F2EB;
+    border-radius: 10px;
+}
+
+.buttons-book-cars{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin-bottom: 2%;
+}

@@ -1,8 +1,12 @@
 import React from 'react';
+import BookCarsForm from '../CarSeats/BookCarsForm';
 
 function BookSeats(){
+
     return(
-    <h1>Hello Book Seats</h1>
+        <div>
+            <BookCarsForm></BookCarsForm>
+        </div>
     )
 }
 
