@@ -4,22 +4,72 @@ import profilePic from '../../images/profile_picture.png';
 import OverviewExcursions from '../smallComponents/OverviewExcursions';
 import LineHeader from '../smallComponents/LineHeader';
 import BtnDelete from "../smallComponents/BtnDelete";
+import Parse from 'parse'
 
 function Profile(){
+    const user = Parse.User.current();
 
     const profileInfo = {
-        name: "Oscar Petersen", 
-        email: "Oscar_Petersen@gmail.com", 
-        age: 45,
-        address: "Rued Langgaards vej 7, 2300 København S",
-        number: 24254546,
+        firstname: user.get("username"),
+        lastname: user.get("lastname"),
+        email: user.get("email"), 
+        age: user.get("age"),
+        address: user.get("address"),
+        number: user.get("phone"),
     };
 
-    const excursions = [
-        {excursionId: 1, type: 'Wilderness Trip', where: 'Sweden', date: '31. june - 5 july 2022'},
-        {excursionId: 2, type: 'Cottage Trip', where: 'Norway', date: '4-7 january 2022'},
-        {excursionId: 3, type: 'Glamping', where: 'Denmark', date: '10-12 september 2022'},
-    ]
+    const excursions = []
+
+    async function retrieveExcursion(){
+        const result = [];
+
+        const getExcursions = Parse.Object.extend("ExcursionSignedUp");
+        const query = new Parse.Query(getExcursions);
+        query.equalTo("MemberID", user);
+
+        try {
+            const results = await query.find();
+            for(let i = 0; i < results.length; i++){
+                const object = results[i].get("ExcursionID");
+                if(!result.includes(object.id)){
+                    result.push(object.id);
+                }
+            }
+
+            } catch (error) {
+                console.log(`Error: ${JSON.stringify(error)}`);
+            } 
+        
+        for(let j = 0; j < result.length; j++){
+            const excur = Parse.Object.extend("Excursion");
+            const q = new Parse.Query(excur)
+            q.equalTo("objectId", result[j])
+            
+            try{
+                const res = await q.find();
+                for(let l = 0; l < res.length; l++){
+                    const excursionId = res[l].id;
+                    const name = res[l].get("name");
+                    const where = res[l].get("country");
+                    const fromDate = res[l].get("from_date");
+                    const toDate = res[l].get("to_date")
+
+                    const ex = {};
+                    ex["excursionId"] = excursionId;
+                    ex["type"] = name;
+                    ex["where"] = where;
+                    ex["from_date"] = fromDate;
+                    ex["to_date"] = toDate;
+                    excursions.push(ex);
+                }
+            }catch (e){
+                console.log(`Error: ${JSON.stringify(e)}`);
+            }
+        }
+    }
+
+    retrieveExcursion();
+    console.log("EXCUR ", excursions)
 
     return(
         <div className="main-container">
@@ -37,56 +87,41 @@ function Profile(){
                     </div>
 
                     <div className="profile-col2">
-                        <div className ="profile-row-item">
-                            <h2>Email:</h2>
-                        </div>
-                        <div className ="profile-row-info">
-                            <p>{profileInfo.email}</p>
-                        </div>
-                        <div className ="profile-row-item">
-                            <h2>Age:</h2>
-                        </div>
-                        <div className ="profile-row-info">
-                            <p>{profileInfo.age}</p>
-                        </div>
-                        <div className ="profile-row-item">
-                            <h2>Address:</h2>
-                        </div>
-                        <div className ="profile-row-info">
-                            <p>{profileInfo.address}</p>
-                        </div>
-                        <div className ="profile-row-item">
-                            <h2>Phone Number:</h2>
-                        </div>
-                        <div className ="profile-row-info">
-                            <p>{profileInfo.number}</p>
-                        </div>
+                        <h2 className ="profile-row-item">Email:</h2>
+                        <p className ="profile-row-info">{profileInfo.email}</p>
+
+                        <h2 className ="profile-row-item">Age:</h2>
+                        <p className ="profile-row-info">{profileInfo.age}</p>
+                        
+                        <h2 className ="profile-row-item">Address:</h2>
+                        <p className ="profile-row-info">{profileInfo.address}</p>
+
+                        <h2 className ="profile-row-item">Phone Number:</h2>
+                        <p className ="profile-row-info">{profileInfo.number}</p>
                     </div>
                 </div>
                 
             </div>
 
             <h2 className ="header-excursions">Registered excursions:</h2>
-
-            <div className="users-excursions">
-
                 <div className="excursion-overview">
-                    {excursions.map(excursion => (
-                        <div className="excursion" key={excursion.excursionId}>    
-                            <OverviewExcursions className="info-bar"
-                            type={excursion.type}
-                            where={excursion.where}
-                            date={excursion.date}
-                            actionBtn="Get Info"></OverviewExcursions>
+                    {excursions.map((excursion) => (
+                        <div className="excursion">
+                                <OverviewExcursions ClassName="info-bar"
+                                    key={excursion.get("excursionID")}
+                                    type={excursion.get("type")}
+                                    where={excursion.get("where")}
+                                    fromDate={excursion.from_date}
+                                    toDate = {excursion.to_date}
+                                    actionBtn="Get Info">
+                                </OverviewExcursions>
                             <div className="button-info">
-                                <BtnDelete actionBtn="Delete Registration" ></BtnDelete>
+                                <BtnDelete className="button-info" actionBtn="Delete Registration" ></BtnDelete>
                             </div>
+                        
                         </div>
                     ))}
                 </div>
-
-            </div>
-                
         </div>
     
     )   
