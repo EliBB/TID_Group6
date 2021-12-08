@@ -1,0 +1,14 @@
+.footer-container{
+    display: flex;
+    justify-content: left;
+    background-color: #F2F2F2;
+    flex-wrap: wrap;
+    bottom: 0;
+    clear: both;
+    position: relative; 
+}
+
+.logo{
+    max-width: 100%;
+    max-height: 100px;
+}

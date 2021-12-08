@@ -1,0 +1,56 @@
+.single-excursion-overview{
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.single-excursion-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #2F796D;
+    border: solid 3px #2F796D;
+    border-radius: 10px; 
+    font-size: 20px;
+    font-weight: 700;
+    color: #F2F2F2;
+    margin-bottom: 2%;
+}
+
+
+.detail-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2%;
+    justify-content: space-between;
+}
+
+.specification-row{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 2%;
+    border: solid 3px #C4F2EB;
+    border-radius: 10px; 
+    color:#285850;   
+}
+
+.specification-text{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+    height: 20px;
+    margin-left: 8%;
+}
+
+.specification-items{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+

@@ -1,0 +1,47 @@
+.overview-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 760px;
+}
+
+.border-header{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 1;
+}
+
+.header{
+    background-color: white;
+}
+
+.info-excursion-container{
+    display: flex;
+    align-items: center;
+    margin-top: -1.6em;
+    position: relative;
+    z-index: -1;
+    
+    border: solid #82D9CA;
+    border-radius: 10px;
+
+}
+
+.line{
+    display: flex;
+    justify-content: center;
+    flex: 1.5;
+    color:#82D9CA;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-right: 15px;
+    margin-left: 15px;
+}

@@ -1,0 +1,26 @@
+.shopping-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.information-list{
+    display: flex;
+    align-items: center;
+    width: 900px;
+    margin-bottom: 5%;
+    
+}
+
+.excursion-information-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.excursion-info{
+    border: solid #C4F2EB;
+    border-radius: 10%;
+    padding: 5%;
+    margin: 2%;
+    width: 220px;
+}

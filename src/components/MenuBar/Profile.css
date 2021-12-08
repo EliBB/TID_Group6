@@ -1,0 +1,57 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-main-container{
+    display: flex;
+    justify-content: center;
+}
+
+.h1-profile{
+    margin-left: 20px;
+}
+
+.line-header{
+    background: '#2F796D';
+    margin-top: -1.5em;
+    margin-left: -80em;
+}
+
+.profile-info-container{
+    display: flex;
+}
+
+.profilePic{
+    height: 225px;
+    width: 225px;
+}
+
+.profile-col2{
+    margin: 10%;
+}
+
+.header-excursions{
+    margin-left: 18%;
+}
+
+.users-excursions{
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+}
+
+.excursion-overview{
+    display: flex;
+    flex-direction: column;
+}
+
+.excursion{
+    display: flex;
+    align-items: center;
+}
+
+.button-info{
+    margin: 2%;
+    margin-top: 40px;
+}
