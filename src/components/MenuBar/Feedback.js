@@ -1,5 +1,4 @@
 import React from 'react';
-import ScrollableTable from '../smallComponents/ScrollableTable';
 import PageHeader from "../smallComponents/PageHeader";
 import './Feedback.css';
 import GreenButton from '../smallComponents/Buttons/GreenButton';
