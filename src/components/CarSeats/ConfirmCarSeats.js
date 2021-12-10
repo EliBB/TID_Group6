@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import './ConfirmCarSeats.css';
 import BackButton from "../smallComponents/Buttons/BackButton";
 import GreenButton from "../smallComponents/Buttons/GreenButton";
+import PageHeader from "../smallComponents/PageHeader";
 
 const ConfirmCarSeats = ({goBackStep}) => {
 
@@ -17,7 +18,8 @@ const ConfirmCarSeats = ({goBackStep}) => {
 
     return(
         <div className="confirm-seats-container">
-            <h1>Book seats</h1>
+            <PageHeader
+            pageTitle="Book seats"/>
 
             <div className="booked-cars-info">
             {bookedCars.map(car => (

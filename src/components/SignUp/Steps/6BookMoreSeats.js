@@ -34,10 +34,12 @@ function BookMoreSeats({
     } 
 
     return(
-        <div className="info-box-container">
-            <PageHeader
+        <>
+        <PageHeader
             pageTitle="Book extra car seats"
             />
+        <div className="info-box-container">
+            
             
             <form onSubmit={handleSubmit}>
                 <div className="info-box">
@@ -60,7 +62,7 @@ function BookMoreSeats({
 
 
         </div>
-        
+        </>
     )
 }
 

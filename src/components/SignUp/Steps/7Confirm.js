@@ -18,10 +18,12 @@ const Confirm = ({memberInput, familyInput, carInput, seatInput, goBackStep}) =>
     }
 
     return(
-        <div className="info-box-container">
+        <>
             <PageHeader
                 pageTitle="Your registration"
             />
+        <div className="info-box-container">
+            
             <div className="confirm-info">
                 <div className="confirm-info-row">
                     <h2>Your information</h2>
@@ -59,6 +61,7 @@ const Confirm = ({memberInput, familyInput, carInput, seatInput, goBackStep}) =>
                 <GreenButton text="Confirm" onClick={confirm}/>
             </div>
         </div>
+        </>
     )
 }
 
