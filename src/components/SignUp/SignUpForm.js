@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './SignUp.css';
 import ExcursionInfo from '../Excursions/ExcursionInfo';
 import ExcursionOverview from "../Excursions/ExcursionOverview";
@@ -11,6 +12,8 @@ import BookMoreSeats from "./Steps/6BookMoreSeats"
 import Confirm from "./Steps/7Confirm";
 
 function SignUpForm(){
+    const navigate = useNavigate();
+
     const [step, setStep] = useState(1);
 
     const [member, setMember] = useState({
@@ -49,6 +52,11 @@ function SignUpForm(){
     const skipStep = () => {
         setStep(step + 2);
     }
+
+    const confirm = () => {
+        navigate("/profile");
+    }
+
 
     const handleMemberChange = memberInput => event =>{
         const {value} = event.target;
@@ -128,7 +136,7 @@ function SignUpForm(){
 
         case 9:
             return(
-                <Confirm memberInput={member} familyInput={familyMember} carInput={car} seatInput={neededSeats} goBackStep={goBackStep}/>
+                <Confirm memberInput={member} familyInput={familyMember} carInput={car} seatInput={neededSeats} goBackStep={goBackStep} confirm={confirm}/>
             );
 
 

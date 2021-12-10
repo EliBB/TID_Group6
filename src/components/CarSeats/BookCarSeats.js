@@ -19,9 +19,11 @@ const BookCarSeats = ({goNextStep}) => {
     ]
 
     return(
-        <div className="book-cars-container">
-            <PageHeader
+        <>
+        <PageHeader
             pageTitle="Book seats"/>
+        <div className="book-cars-container">
+            
            
             <div className="book-cars-table">
                 <table className="book-seats-list">
@@ -52,6 +54,7 @@ const BookCarSeats = ({goNextStep}) => {
             </div>
             
         </div>
+        </>
     )
 }
 
