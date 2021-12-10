@@ -48,10 +48,11 @@ function RegisterCar({
     }
 
     return(
-        <div className="placeholder">
-            <PageHeader
+        <>
+        <PageHeader
                 pageTitle="Add car"
             />
+        <div className="placeholder">
             
             <form className="input-form" onSubmit={handleSubmit}>
                 <InputForm
@@ -100,6 +101,7 @@ function RegisterCar({
                 </div>
             </form> 
         </div>
+        </>
     )
 }
 

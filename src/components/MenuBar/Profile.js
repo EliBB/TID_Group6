@@ -5,6 +5,7 @@ import OverviewExcursions from '../smallComponents/OverviewExcursions';
 import LineHeader from '../smallComponents/LineHeader';
 import BtnDelete from "../smallComponents/BtnDelete";
 import Parse from 'parse'
+import PageHeader from "../smallComponents/PageHeader";
 
 function Profile(){
     const user = Parse.User.current();
@@ -73,9 +74,9 @@ function Profile(){
     
     return(
         <div className="main-container">
-            <h1 className ="h1-profile">Profile</h1>
+            <PageHeader
+            pageTitle="Profile"/>
 
-            <LineHeader></LineHeader>
 
             <div className="profile-main-container">
                 

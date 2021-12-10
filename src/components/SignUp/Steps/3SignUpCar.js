@@ -10,10 +10,12 @@ function SignUpCar({
     skipStep
 }){
     return(
+        <>
+        <PageHeader
+        pageTitle="Transportation"
+        />
         <div className="info-box-container">
-            <PageHeader
-            pageTitle="Transportation"
-            />
+           
 
             <div className="info-box">               
                 <div className="info-box-row">
@@ -27,6 +29,7 @@ function SignUpCar({
             </div>
 
         </div>
+        </>
 
     );
 }

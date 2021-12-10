@@ -31,7 +31,7 @@ function AddMember ({
         }
     } 
     const memberSignedUp = Parse.User.current(); 
-    const firstname = memberSignedUp.get("username");
+    const firstname = memberSignedUp.get("firstname");
 
     function handleSubmit(event){
         event.preventDefault();

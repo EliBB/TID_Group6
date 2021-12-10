@@ -1,6 +1,7 @@
 import React from 'react';
 import './BookCarSeats.css'
 import NextButton from '../smallComponents/Buttons/NextButton';
+import PageHeader from '../smallComponents/PageHeader';
 
 const BookCarSeats = ({goNextStep}) => {
 
@@ -19,7 +20,9 @@ const BookCarSeats = ({goNextStep}) => {
 
     return(
         <div className="book-cars-container">
-            <h1>Book seats</h1>
+            <PageHeader
+            pageTitle="Book seats"/>
+           
             <div className="book-cars-table">
                 <table className="book-seats-list">
                     <tr className="table-header">

@@ -6,6 +6,7 @@ import InputForm from "../SignUp/InputForm";
 
 function Register(){
     const [username, setUsername] = useState("");
+    const [firstname, setFirstname] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [role, setRole] = useState("");
@@ -18,6 +19,7 @@ function Register(){
         
         const user = new Parse.User();
         user.setUsername(username);
+        user.setUsername(firstname)
         user.setEmail(email);
         user.setPassword(password);
         user.set("role", role)
@@ -32,6 +34,10 @@ function Register(){
 
     function usernameChange(event){
         setUsername(event.target.value);
+    }
+
+    function firstnameChange(event){
+        setFirstname(event.target.value);
     }
 
     function emailChange(event){
@@ -51,10 +57,17 @@ function Register(){
         <h1>Register</h1>
         <form className="input-form">
             <InputForm
-                title="First name"
+                title="User name"
                 type="text"
                 value={username}
                 onChange={usernameChange}
+            />
+
+            <InputForm
+                title="First name"
+                type="text"
+                value={firstname}
+                onChange={firstnameChange}
             />
         
             <InputForm

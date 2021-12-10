@@ -10,10 +10,12 @@ function MoreSeats({
     goBackStep
 }){
     return(
+        <>
+        <PageHeader
+        pageTitle="Book extra car seats"
+        />
         <div className="info-box-container">
-            <PageHeader
-            pageTitle="Book extra car seats"
-            />
+           
             <div className="info-box">
                 <div className="info-box-row">
                     <h2>Do you need extra car seats?</h2>
@@ -30,6 +32,7 @@ function MoreSeats({
             </div>
                     
         </div>
+        </>
     )
 }
 
