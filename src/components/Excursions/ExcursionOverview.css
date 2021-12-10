@@ -23,3 +23,32 @@
     margin: 2%;
     margin-top: 40px;
 }
+
+.create-excursion-button{
+    display: flex;
+    align-items: center;
+    
+    width: 813px;
+    height: 62px;
+    left: 905px;
+    top: 469px;
+    
+    background-color: #2F796D;
+    border: solid 3px #2F796D;
+    border-radius: 10px;
+    
+    padding: 2%;
+    cursor: pointer;
+    justify-content: center;
+}
+
+
+.create-excursion-button{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: -0.02em;  
+    color:#E8F6F4;
+    text-decoration: none;
+  }

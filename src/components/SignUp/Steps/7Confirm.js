@@ -14,7 +14,7 @@ const Confirm = ({memberInput, familyInput, carInput, seatInput, goBackStep}) =>
 
     function confirm (){
         console.log("Confirm clicked");
-        /* navigate("/profile"); */
+        navigate("/profile");
     }
 
     return(
@@ -23,7 +23,6 @@ const Confirm = ({memberInput, familyInput, carInput, seatInput, goBackStep}) =>
                 pageTitle="Your registration"
             />
             <div className="confirm-info">
-            
                 <div className="confirm-info-row">
                     <h2>Your information</h2>
                     <div className="confirm-details">
