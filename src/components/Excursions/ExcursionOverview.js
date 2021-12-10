@@ -44,12 +44,13 @@ const ExcursionOverview = ({goNextStep}) => {
             <PageHeader
                 pageTitle="Excursions"
             />
+            <br/>
+            <button className="create-excursion-button" onClick={createExcursion}>
+                <p>Create new excursion </p>
+            </button>
 
-            <GreenButton
-            text="Create new Excursion"
-            onClick={createExcursion}/>
-
-
+            <br/>
+            
             <GreenButton onClick={getExcursionData}
             text="Get excursions"/> 
 

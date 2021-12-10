@@ -1,0 +1,38 @@
+.feedback-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 5% 0;  
+}
+
+.feedback-box{
+    border: solid #82d9ca;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 2% 20% 5% 20%;
+}
+
+.feedback-row{
+    margin: 0 2% 0 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-box{
+    display: flex;
+    min-width: 99%;
+    max-width: 99%;
+    border: 1px solid #274157;
+    border-radius: 10px;
+    height: 7em;
+}
+
+.feedback-range{
+    display: flex;
+    width: 99%;
+    height: 5em;   
+}
+
+.send-button{
+    justify-content: center;
+}
