@@ -13,7 +13,7 @@ function Profile(){
         firstname: user.get("username"),
         lastname: user.get("lastname"),
         email: user.get("email"), 
-        age: user.get("age"),
+        age: user.get("memberAge"),
         address: user.get("address"),
         number: user.get("phone"),
     };
