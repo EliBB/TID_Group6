@@ -1,20 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import BackButton from '../smallComponents/Buttons/BackButton';
 import GreenButton from '../smallComponents/Buttons/GreenButton';
 import './ExcursionInfo.css';
 import ScrollableTable from '../smallComponents/ScrollableTable';
 
-const ExcursionInfo = ({goNextStep, goBackStep}) => {
+
+function ExcursionInfo(){
 
     const excursionInfo = [
-        {excursionId: 1, 
-        type: 'Wilderness Trip', 
-        where: 'Sweden', 
-        date: '31. june - 5 july 2022',
+        {
         adults: 40,
         teenagers: 12,
         children: 14,
-        shoppingList: []
         }
     ]
 
@@ -49,16 +47,50 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
         {id: 10, col1: "Dishes friday dinner", col2: "Jens", col3: "Peter, Marie"},
     ]
 
+    const navigate = useNavigate();
+
+    function goToSignUp(){
+        navigate("/SignUpForm")
+    }
+
+    function goBack(){
+        navigate("/excursionsOverview")
+    }
+
+    let params = useParams();
+
+    
+    const [excursionData, setExcursionData] = useState({});
+
+    useEffect(() => {
+        getExcursionInfo();
+    }, []);
+
+    const getExcursionInfo = async () => {
+        const fetchExcursion = await fetch(`https://parseapi.back4app.com/classes/Excursion/${params.id}`,
+        {
+            method: "GET",
+                headers:{
+                    "X-Parse-Application-Id": "aKa4elDQmoDX7QTNARrGF3MR3JmM5h7uo5jy5uK6",
+                    "X-Parse-REST-API-Key": "RzzAU2R0DQmhUA2dentDDnuTTa6lySAFYKsbABs2",
+                },
+        }
+    );
+        const excursionItem = await fetchExcursion.json();
+        setExcursionData(excursionItem);
+        console.log(excursionItem);
+    };
+    
     return(
-        <>
-            {excursionInfo.map(excursion => (
+        <div className='container'>
             <div className="single-excursion-overview">  
                 <div className="single-excursion-row">
-                    <p>{excursion.type}</p>
-                    <p>{excursion.where}</p>
-                    <p>{excursion.date}</p>
+                    <p>{excursionData.name}</p>
+                    <p>{excursionData.country}</p>
+                    <p>{excursionData.from_date} to {excursionData.to_date}</p>
+                    
                 </div>
-                
+              
 
                 <div className="detail-row">
                     <div className="specification-row">
@@ -67,13 +99,13 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
                         </div>
 
                         <div className="specification-items">
-                                <h3>Adults: {excursion.adults}</h3>
-                                <h3>Teenagers: {excursion.teenagers}</h3>
-                                <h3>Children: {excursion.children}</h3>
+                                <h3>Adults: {excursionInfo.adults}</h3>
+                                <h3>Teenagers: {excursionInfo.teenagers}</h3>
+                                <h3>Children: {excursionInfo.children}</h3>
                         </div>
                     </div>
 
-                    <GreenButton text="Sign up" onClick={goNextStep}/>
+                    <GreenButton text="Sign up" onClick={goToSignUp}/>
                 </div>
                         
                 <div>
@@ -93,11 +125,9 @@ const ExcursionInfo = ({goNextStep, goBackStep}) => {
                 headerTwo="Boss"
                 headerThree="Manning"/>
 
-                <BackButton onClick={goBackStep}/>
+                <BackButton onClick={goBack}/>
             </div> 
-            ))}
-           
-        </>
+        </div>
     )
 }
 

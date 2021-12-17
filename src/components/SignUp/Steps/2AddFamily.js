@@ -3,6 +3,7 @@ import Parse from "parse";
 import '../SignUp.css';
 import BtnDelete from '../../smallComponents/BtnDelete'
 import InputForm from "../InputForm";
+import DutyPriorityForm from "../../smallComponents/DutyPriorityForm";
 import PageHeader from "../../smallComponents/PageHeader";
 import BackButton from "../../smallComponents/Buttons/BackButton";
 import NextButton from "../../smallComponents/Buttons/NextButton";
@@ -50,7 +51,7 @@ function AddFamily ({
     }
 
     return(
-        <>
+        <div className="container">
             <PageHeader
             pageTitle="Add Family Members"
             />
@@ -77,7 +78,7 @@ function AddFamily ({
 
                     <div className="info-col">
                         <h2>Duty Priorities</h2>
-                        
+                        <DutyPriorityForm/>
                     </div>
                 </div>
 
@@ -96,7 +97,7 @@ function AddFamily ({
                     <NextButton onClick={addFamilyMembers}/> 
                 </div>
             </form>
-        </>
+        </div>
     )
 }
 

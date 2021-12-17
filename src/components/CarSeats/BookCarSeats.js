@@ -10,7 +10,7 @@ const BookCarSeats = ({goNextStep}) => {
         {id: 2, who: 'Kristin Petersen', seats: '1/4', typeCar: 'Volkswagen UP green', where: 'Herlev'},
         {id: 3, who: 'Klara Krag', seats: '3/4', typeCar: 'Peugeut 308 black', where: 'København K'},
         {id: 4, who: 'Elisabeth Bøgebjerg', seats: '4/5', typeCar: 'Skoda Fabia silver', where: 'Hillerød'},
-        {id: 2, who: 'Carsten Hansen', seats: '2/5', typeCar: 'Toyota Corolla red', where: 'Ballerup'},
+        {id: 10, who: 'Carsten Hansen', seats: '2/5', typeCar: 'Toyota Corolla red', where: 'Ballerup'},
         {id: 5, who: 'Mia Rønnelund', seats: '2/4', typeCar: 'Ford Mondeo grey', where: 'Ballerup'},
         {id: 6, who: 'Klara Krag', seats: '3/4', typeCar: 'Peugeut 308 black', where: 'København K'},
         {id: 7, who: 'Elisabeth Bøgebjerg', seats: '4/5', typeCar: 'Skoda Fabia silver', where: 'Hillerød'},
