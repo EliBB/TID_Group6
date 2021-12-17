@@ -1,40 +1,27 @@
 .menu-container{
     display: flex;
     justify-content: space-evenly;
-    background-color: #F2F2F2;
-    padding: 2%;
     flex-wrap: wrap;
-    margin: 0px;
+    background-color: #F2F2F2;
+    padding: 2% 10% 2% 10%;;   
 }
 
 .menu-link{
-    width: 122px;
-    height: 40px;
-    
-    border: 3px solid #285850;
-    border-radius: 10px;
-
     display: flex;
     justify-content: center;
-
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    
+    flex-wrap: wrap;
 }
 
-.menu-link a {
-    color: #285850;
+.menu-link a:link {
     text-decoration: none;
-
-    margin-top: 9px;
 }
 
-#icon-link{
-    border: none;
+.menu-link a:hover{
+    color: #2F796D;
+    text-decoration: underline;
+    text-decoration-thickness: 20%;
 }
 
-#icon{
-    font-size: 35px;
-    color: #285850;
-}
+
+
+

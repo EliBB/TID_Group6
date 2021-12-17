@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './SignUp.css';
-import ExcursionInfo from '../Excursions/ExcursionInfo';
 import ExcursionOverview from "../Excursions/ExcursionOverview";
 import AddMember from './Steps/1AddMember';
 import AddFamily from './Steps/2AddFamily';
@@ -93,52 +92,38 @@ function SignUpForm(){
     switch (step){
         case 1:
             return(
-                <ExcursionOverview goNextStep={goNextStep}/>
+                <AddMember goNextStep={goNextStep} handleData={handleMemberChange} memberInput={member}/>
             );
 
         case 2:
             return(
-                <ExcursionInfo goNextStep={goNextStep} goBackStep={goBackStep}/>
+                <AddFamily goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleFamilyChange} familyInput={familyMember} setFamilyInput={setFamilyMember}/>
             );
 
         case 3:
             return(
-                <AddMember goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleMemberChange} memberInput={member}/>
+                <SignUpCar goNextStep={goNextStep} skipStep={skipStep} goBackStep={goBackStep}/>
             );
 
         case 4:
             return(
-                <AddFamily goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleFamilyChange} familyInput={familyMember} setFamilyInput={setFamilyMember}/>
+                <RegisterCar goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleCarChange} carInput={car}/>
             );
 
         case 5:
             return(
-                <SignUpCar goNextStep={goNextStep} skipStep={skipStep} goBackStep={goBackStep}/>
+                <MoreSeats goNextStep={goNextStep} skipStep={skipStep} goBackStep={goBackStep}/>
             );
 
         case 6:
             return(
-                <RegisterCar goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleCarChange} carInput={car}/>
-
+                <BookMoreSeats goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleSeatChange} seatInput={neededSeats}/>
             );
 
         case 7:
             return(
-                <MoreSeats goNextStep={goNextStep} skipStep={skipStep} goBackStep={goBackStep}/>
-
-            );
-
-        case 8:
-            return(
-                <BookMoreSeats goNextStep={goNextStep} goBackStep={goBackStep} handleData={handleSeatChange} seatInput={neededSeats}/>
-
-            );
-
-        case 9:
-            return(
                 <Confirm memberInput={member} familyInput={familyMember} carInput={car} seatInput={neededSeats} goBackStep={goBackStep} confirm={confirm}/>
             );
-
 
         default:
             return(

@@ -14,6 +14,8 @@ import Profile from './components/MenuBar/Profile';
 import Login from './components/Login/Login';
 import Register from './components/Login/Register';
 import CreateExcursion from './components/Excursions/CreateExcursion';
+import ExcursionInfo from './components/Excursions/ExcursionInfo';
+import SignUpForm from './components/SignUp/SignUpForm';
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route exact path="/excursions" element={<Excursions/>}/>
-          <Route path="excursionsOverview" element={<ExcursionOverview/>}/>
+          <Route exact path="/excursionsOverview" element={<ExcursionOverview/>}/>
+          <Route path="/excursionsOverview/:id" element={<ExcursionInfo/>}/>
+          <Route path="/SignUpForm" element={<SignUpForm/>}/>
           <Route path="/bookSeats" element={<BookSeats/>}/>
           <Route path="/feedback" element={<Feedback/>}/>
           <Route path="/profile" element={<Profile/>}/>

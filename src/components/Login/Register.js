@@ -14,9 +14,8 @@ function Register(){
     const navigate = useNavigate();
 
 
-    async function createUser(event){
-        event.preventDefault();
-        
+    async function createUser(e){     
+        e.preventDefault();   
         const user = new Parse.User();
         user.setUsername(username);
         user.setUsername(firstname)
@@ -25,11 +24,11 @@ function Register(){
         user.set("role", role)
         
         try{
-            await user.signUp();           
+            await user.signUp(); 
+            navigate("/Profile")          
         } catch (error){
             alert("Error " + error.message)
         } 
-        navigate("/profile")
     }   
 
     function usernameChange(event){

@@ -48,60 +48,60 @@ function RegisterCar({
     }
 
     return(
-        <>
-        <PageHeader
-                pageTitle="Add car"
-            />
-        <div className="placeholder">
-            
-            <form className="input-form" onSubmit={handleSubmit}>
-                <InputForm
-                    title="License plate"
-                    type="text"
-                    name="licensePlate"
-                    value={carInput.licensePlate}
-                    onChange={handleData("licensePlate")}
+        <div className="container">
+            <PageHeader
+                    pageTitle="Add car"
                 />
+            <div className="placeholder">
                 
-                <InputForm
-                    title="Color"
-                    type="text"
-                    name="color"
-                    value={carInput.color}
-                    onChange={handleData("color")}
-                />   
+                <form className="input-form" onSubmit={handleSubmit}>
+                    <InputForm
+                        title="License plate"
+                        type="text"
+                        name="licensePlate"
+                        value={carInput.licensePlate}
+                        onChange={handleData("licensePlate")}
+                    />
+                
+                    <InputForm
+                        title="Color"
+                        type="text"
+                        name="color"
+                        value={carInput.color}
+                        onChange={handleData("color")}
+                    />   
 
-                <InputForm
-                    title="Car type"
-                    type="text"
-                    name="carType"
-                    value={carInput.carType}
-                    onChange={handleData("carType")}
-                />
+                    <InputForm
+                        title="Car type"
+                        type="text"
+                        name="carType"
+                        value={carInput.carType}
+                        onChange={handleData("carType")}
+                    />
 
-                <InputForm
-                    title="Number of free seats"
-                    type="number"
-                    name="numberOfFreeSeats"
-                    value={carInput.numberOfFreeSeats}
-                    onChange={handleData("numberOfFreeSeats")}
-                />
+                    <InputForm
+                        title="Number of free seats"
+                        type="number"
+                        name="numberOfFreeSeats"
+                        value={carInput.numberOfFreeSeats}
+                        onChange={handleData("numberOfFreeSeats")}
+                    />
 
-                <hr></hr>
+                    <hr></hr>
 
-                <div className="add-button">
-                    <GreenButton text="Add another car" onClick={addNewCar}/>
+                    <div className="add-button">
+                        <GreenButton text="Add another car" onClick={addNewCar}/>
 
-                    <BtnDelete onClick={deleteCar}/>
-                </div>
+                        <BtnDelete onClick={deleteCar}/>
+                    </div>
 
-                <div className="button-row">
-                    <BackButton onClick={goBackStep}/>
-                    <NextButton onClick={addCar}/>
-                </div>
-            </form> 
+                    <div className="button-row">
+                        <BackButton onClick={goBackStep}/>
+                        <NextButton onClick={addCar}/>
+                    </div>
+                </form> 
+            </div>
         </div>
-        </>
     )
 }
 

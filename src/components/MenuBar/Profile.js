@@ -2,7 +2,6 @@ import React from "react";
 import "./Profile.css";
 import profilePic from '../../images/profile_picture.png';
 import OverviewExcursions from '../smallComponents/OverviewExcursions';
-import LineHeader from '../smallComponents/LineHeader';
 import BtnDelete from "../smallComponents/BtnDelete";
 import Parse from 'parse'
 import PageHeader from "../smallComponents/PageHeader";

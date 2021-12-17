@@ -6,9 +6,10 @@ import Login from '../Login/Login';
 function Home(){
     const navigate = useNavigate(); 
     const currentUser = Parse.User.current(); 
-    
+
+
     if(currentUser){   
-        navigate("/profile")
+        navigate("/Profile")
     } return(
         <Login/>
     )
