@@ -5,16 +5,14 @@ import InputForm from "../InputForm";
 import PageHeader from "../../smallComponents/PageHeader";
 import BackButton from "../../smallComponents/Buttons/BackButton";
 import NextButton from "../../smallComponents/Buttons/NextButton";
+import { useNavigate } from "react-router-dom";
 
-function AddMember ({
+function AddMember ({ 
     goNextStep, 
-    goBackStep, 
     handleData, 
     memberInput}) {
 
     async function saveNewMember(){
-        const member = Parse.Object.extend("User");
-
         const memberSignedUp = Parse.User.current();        
         memberSignedUp.set("username", memberInput.memberFirstname);
         memberSignedUp.set("lastname", memberInput.lastname)
@@ -31,14 +29,19 @@ function AddMember ({
         }
     } 
     const memberSignedUp = Parse.User.current(); 
-    const firstname = memberSignedUp.get("username");
+    const firstname = memberSignedUp.get("firstname");
 
     function handleSubmit(event){
         event.preventDefault();
     } 
 
+    const navigate = useNavigate();
+    function goBack(){
+        navigate("/excursionsOverview");
+    }
+
     return(
-        <>
+        <div className="container">
             <PageHeader
                 pageTitle="Your Informations"
             />
@@ -84,13 +87,12 @@ function AddMember ({
                     onChange={handleData("memberAge")}
                 />
 
-
                 <div className="button-row">
-                    <BackButton onClick={goBackStep}/>
+                    <BackButton onClick={goBack}/>
                     <NextButton onClick={saveNewMember}/>          
                 </div>
             </form>
-        </>
+        </div>
     )
 }
 export default AddMember;

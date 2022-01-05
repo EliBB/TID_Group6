@@ -1,12 +1,9 @@
 import React from 'react';
-import SignUpForm from '../SignUp/SignUpForm';
+import ExcursionOverview from '../Excursions/ExcursionOverview';
 
 function Excursions(){
     return(
-        <div className="container">
-            <SignUpForm/>
-        </div>
-    
+        <ExcursionOverview/>
     )
 }
 

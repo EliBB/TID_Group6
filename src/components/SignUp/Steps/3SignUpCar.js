@@ -10,22 +10,24 @@ function SignUpCar({
     skipStep
 }){
     return(
-        <div className="info-box-container">
+        <div className="container">
             <PageHeader
             pageTitle="Transportation"
             />
+            <div className="info-box-container">
+            
 
-            <div className="info-box">               
-                <div className="info-box-row">
-                    <GreenButton text="No car" onClick={skipStep}/>
-                    <GreenButton text="Register car" onClick={goNextStep}/>
+                <div className="info-box">               
+                    <div className="info-box-row">
+                        <GreenButton text="No car" onClick={skipStep}/>
+                        <GreenButton text="Register car" onClick={goNextStep}/>
+                    </div>
+                </div>
+                
+                <div className="single-button-row">
+                    <BackButton onClick={goBackStep}/>
                 </div>
             </div>
-            
-            <div className="single-button-row">
-                <BackButton onClick={goBackStep}/>
-            </div>
-
         </div>
 
     );

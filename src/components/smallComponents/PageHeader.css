@@ -1,4 +1,21 @@
 .page-header{
     display: flex;
-    align-items: center;
+    
+    margin-bottom: 2%;
+    
+   
 }
+
+.page-title{
+    margin-left: 200px;
+}
+
+.header-line{
+    display: flex;
+    background: #2F796D;
+    background-color: #2F796D;
+    border: 5px solid #2F796D;
+    width: 370px;
+    margin-left: 200px;
+}
+

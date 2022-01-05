@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import OverviewExcursions from "../smallComponents/OverviewExcursions";
 import './ExcursionOverview.css'
 import PageHeader from "../smallComponents/PageHeader";
@@ -6,6 +6,7 @@ import GreenButton from "../smallComponents/Buttons/GreenButton";
 import { useNavigate } from "react-router";
 import Parse from "parse";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ExcursionOverview = ({goNextStep}) => {
 
@@ -17,12 +18,17 @@ const ExcursionOverview = ({goNextStep}) => {
 
     const [queryResult, setQueryResult] = useState([]);
 
-    async function getExcursionData(){
+    useEffect(() => {
+        excursionItems();
+    }, []);
+
+    const excursionItems = async () =>{
         const query = new Parse.Query('Excursion');
         query.select('name');
         query.select('country');
         query.select('from_date');
         query.select('to_date');
+        query.select('ObejctId');
 
         try{
             let excursions = await query.find();
@@ -33,30 +39,26 @@ const ExcursionOverview = ({goNextStep}) => {
         }
     };
 
-
     const user = Parse.User.current();
     const role = user.get("role")
 
-    
+
     if(role === "Organizer"){
         return(
-        <>
+        <div className="container">
             <PageHeader
                 pageTitle="Excursions"
             />
+            <br/>
+            <button className="create-excursion-button" onClick={createExcursion}>
+                <p>Create new excursion </p>
+            </button>
 
-            <GreenButton
-            text="Create new Excursion"
-            onClick={createExcursion}/>
-
-
-            <GreenButton onClick={getExcursionData}
-            text="Get excursions"/> 
-
+            <br/>
 
             <div className="all-excursions">
                 {queryResult.map((excursion) => (
-                    <div className="one-excursion" >
+                    <div className="one-excursion" key={excursion.get('ObjectId')}>
                         <OverviewExcursions 
                             key={excursion.get('ObjectId')}
                             type={excursion.get('name')}  
@@ -67,26 +69,23 @@ const ExcursionOverview = ({goNextStep}) => {
                         </OverviewExcursions>
 
                         <div className="button-getinfo">
-                            <GreenButton text="Get info" onClick={goNextStep}/>
+                            <Link to={`/excursionsOverview/${excursion.id}`}>
+                                <GreenButton text="Get info"/>
+                            </Link>
                         </div>
                         
                     </div>
                 ))}
             </div> 
-            
-        </>
+        </div>
         )
     } else {
         
         return(
-        <>
+        <div className="container">
             <PageHeader
                 pageTitle="Excursions"
-            />
-        
-            <GreenButton onClick={getExcursionData}
-            text="Get excursions"/> 
-            
+            />          
 
             <div className="all-excursions">
                 {queryResult.map((excursion) => (
@@ -107,7 +106,7 @@ const ExcursionOverview = ({goNextStep}) => {
                     </div>
                 ))}
             </div>        
-        </>
+        </div>
         )
     }
 }

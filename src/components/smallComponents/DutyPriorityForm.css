@@ -1,0 +1,27 @@
+.duty-input-row{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+
+}
+
+.duty-input-field{
+    display: flex;
+
+    width: 238px;
+    height: 35px;
+    left: 717px;
+    top: 313px;
+
+    background: #FFFFFF;
+    border: 1px solid #274157;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    font-size: 20px;
+    font-weight: 400;
+    color:#285850;
+    outline: none;
+
+    
+}
