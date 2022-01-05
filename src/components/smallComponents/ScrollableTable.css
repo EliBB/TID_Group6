@@ -1,0 +1,24 @@
+table{
+    border: solid #2F796D;
+    border-radius: 30px;
+    border-collapse: collapse;
+    width: 500px;
+    height: 400px;
+}
+
+td{
+    border: solid #C4F2EB;
+    border-spacing: 2%;
+    padding: 10px;
+}
+
+.scrollable-table{
+    overflow-y: scroll;
+    width: 515px;
+    height: 400px;
+    margin: 2%;
+}
+
+.table-header{
+    font-weight: bold;
+}

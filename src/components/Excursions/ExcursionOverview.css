@@ -1,0 +1,25 @@
+.member-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.overview-h{
+    margin-left: -6em;
+}
+
+.all-excursions{
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+}
+
+.one-excursion{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button-getinfo{
+    margin: 2%;
+    margin-top: 40px;
+}
