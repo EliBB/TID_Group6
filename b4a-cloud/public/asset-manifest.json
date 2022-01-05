@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.99dce7bd.chunk.css",
+    "main.js": "/static/js/main.2a7009ca.chunk.js",
+    "main.js.map": "/static/js/main.2a7009ca.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c26fcb91.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c26fcb91.js.map",
+    "static/js/2.9f5708ad.chunk.js": "/static/js/2.9f5708ad.chunk.js",
+    "static/js/2.9f5708ad.chunk.js.map": "/static/js/2.9f5708ad.chunk.js.map",
+    "static/js/3.cb45ac72.chunk.js": "/static/js/3.cb45ac72.chunk.js",
+    "static/js/3.cb45ac72.chunk.js.map": "/static/js/3.cb45ac72.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.99dce7bd.chunk.css.map": "/static/css/main.99dce7bd.chunk.css.map",
+    "static/js/2.9f5708ad.chunk.js.LICENSE.txt": "/static/js/2.9f5708ad.chunk.js.LICENSE.txt",
+    "static/media/Logo_CoAdventure.ee2e0926.png": "/static/media/Logo_CoAdventure.ee2e0926.png",
+    "static/media/profile_picture.f0daab2d.png": "/static/media/profile_picture.f0daab2d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c26fcb91.js",
+    "static/js/2.9f5708ad.chunk.js",
+    "static/css/main.99dce7bd.chunk.css",
+    "static/js/main.2a7009ca.chunk.js"
+  ]
+}

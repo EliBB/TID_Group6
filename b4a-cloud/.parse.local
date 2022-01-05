@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "CoAdventure": {
+      "applicationId": "aKa4elDQmoDX7QTNARrGF3MR3JmM5h7uo5jy5uK6"
+    },
+    "_default": {
+      "link": "CoAdventure"
+    }
+  }
+}
